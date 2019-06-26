@@ -1,8 +1,13 @@
 @import '../../styles.scss';
 
 .home {
-  border: 1px solid black;
-
+    width: 70vw;
+    margin-left: 10em;
+.title{
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
   .sections {
       display: flex;
       flex-wrap: wrap;
@@ -22,13 +27,13 @@
 
     .punctuation {
         margin: 1em;
-        padding: 7em;
+        padding: 8em;
       border: 1px solid black;
     }
 
     .web {
         margin: 1em;
-        padding: 7em;
+        padding: 8em;
       border: 1px solid black;
     }
   }
