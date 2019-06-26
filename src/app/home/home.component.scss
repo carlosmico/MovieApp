@@ -1,1 +1,35 @@
 @import '../../styles.scss';
+
+.home {
+  border: 1px solid black;
+
+  .sections {
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+    .Uncoming {
+        margin: 1em;
+      border: 1px solid black;
+      padding: 7em;
+    }
+
+    .yourList {
+        margin: 1em;
+        padding: 7em;
+      border: 1px solid black;
+    }
+
+    .punctuation {
+        margin: 1em;
+        padding: 7em;
+      border: 1px solid black;
+    }
+
+    .web {
+        margin: 1em;
+        padding: 7em;
+      border: 1px solid black;
+    }
+  }
+}
