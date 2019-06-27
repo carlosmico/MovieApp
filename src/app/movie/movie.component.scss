@@ -1,7 +1,7 @@
 @import '../../styles.scss';
 
 .generalInfo{
-    background-image: url(./cinema.jpg);
+    background-image: url(../../assets/cinema.jpg);
     background-size: cover;
 }
 
@@ -39,9 +39,24 @@
 .buttons{
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     width: 50%;
-
+    margin-bottom: 2em;
+    
     & button{
         all:unset;
+        border-radius: 50%;
+        padding: 0.5em;
+        
+        &:hover:not(.playTrailer){
+            color:black;
+            background-color: $color-letra;
+            cursor: pointer;
+        }
+
     }
+        & .playTrailer:hover{
+            cursor: pointer;
+            color: grey;
+        }
 }
