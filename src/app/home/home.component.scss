@@ -1,8 +1,13 @@
 @import '../../styles.scss';
 
-.home {
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+.content {
     width: 70vw;
-    margin-left: 10em;
 .title{
     text-align: center;
     font-size: 2em;
@@ -20,6 +25,7 @@
     }
 
     .yourList {
+      background-image: url();
         margin: 1em;
         padding: 7em;
       border: 1px solid black;
@@ -37,4 +43,4 @@
       border: 1px solid black;
     }
   }
-}
+}}
