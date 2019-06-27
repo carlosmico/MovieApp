@@ -1,1 +1,35 @@
 @import '../../styles.scss';
+
+.generalInfo{
+    background-image: url(./cinema.jpg);
+    background-size: cover;
+}
+
+.backgroundColor{
+    color: $color-letra;
+    background-color: rgba(87, 5, 150, 0.632);
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 15em;
+    width: 98.9vw;
+    height: 90vh;
+}
+
+.coverPage{
+    height: 30em;
+    width: 25sem;
+    margin-right: 4em;
+}
+
+.titles{
+    display: flex;
+    align-items: baseline;
+
+    & > h1 {
+        margin-right: 0.5em;
+    }
+
+    & > h3{
+        color: grey;
+    }
+}
