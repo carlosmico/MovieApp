@@ -1,1 +1,13 @@
 @import '../../styles.scss';
+
+.header{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background-color: $color-principal-oscuro;
+    color: $color-letra;
+
+    &>img{
+        height: 50px;
+    }
+}

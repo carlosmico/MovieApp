@@ -2,8 +2,16 @@
 $color-principal: #393e46;
 $color-principal-oscuro: #222831;
 $color-acento: #00adb5;
+$color-letra: whitesmoke;
 $color-fondo:  #EEEE;
+
 
 html{
     font-family: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

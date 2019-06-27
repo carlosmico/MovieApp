@@ -1,1 +1,40 @@
 @import '../../styles.scss';
+
+.home {
+    width: 70vw;
+    margin-left: 10em;
+.title{
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
+  .sections {
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+    .Uncoming {
+        margin: 1em;
+      border: 1px solid black;
+      padding: 7em;
+    }
+
+    .yourList {
+        margin: 1em;
+        padding: 7em;
+      border: 1px solid black;
+    }
+
+    .punctuation {
+        margin: 1em;
+        padding: 8em;
+      border: 1px solid black;
+    }
+
+    .web {
+        margin: 1em;
+        padding: 8em;
+      border: 1px solid black;
+    }
+  }
+}
