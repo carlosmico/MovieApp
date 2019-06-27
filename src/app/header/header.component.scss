@@ -1,17 +1,59 @@
 @import '../../styles.scss';
 
-.header{
-    display: flex;
-    align-items: center;
-    padding: 1em;
+.header {
     background-color: $color-principal-oscuro;
-    color: $color-letra;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &>img{
+  .navbar {
+    background-color: $color-principal-oscuro !important;
+    padding: 1em;
+    display: flex;
+    width: 80vw;
+
+    //Logo y título
+    &>a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $color-letra;
+
+      &>img {
         height: 50px;
+      }
+
+      &>h1 {
+        margin-left: 5px;
+        font-size: 1.5em;
+      }
     }
 
-    &>h1{
-        margin-left: 5px;
+    //Links menú
+    .nav-link {
+      color: $color-letra;
     }
+
+    .nav-link:hover {
+      color: $color-acento;
+    }
+
+    .navbar-collapse{
+        margin-top: 5px;
+        justify-content: flex-end;
+    }
+
+    //Botón desplegar menú móvil
+
+    .navbar-toggler-icon{
+        background-image: url('../../assets/menu.png')
+    }
+
+    //Menú desplegable móvil
+    .navbar-nav{
+        padding: 1em;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+  }
 }
