@@ -2,32 +2,36 @@
 
 footer {
     background-color: $color-principal-oscuro;
+    padding: 0.3em;
+}
+
+h3 {
+    color: $color-acento;
+}
+
+i {
+    color: $color-letra;
+    font-size: 2em;
+}
+
+.footerDiv {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-evenly;
-    padding: 0.2em;
+}
 
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-    }
-    
-    img{
-        height: 3.1em;
-    }
+.section1, .section2, .section3 {
+    width: 33%;
+}
 
-    h1, h3 {
-        color: $color-acento;
-    }
+p {
+    color: $color-letra;
+}
 
-    ul {
-        list-style: none;
-        color: $color-fondo;
-    }
-
-    p {
-        color: $color-fondo;
-    }
-
+.copyright {
+    color: $color-letra;
+    font-size: 0.8em;
+    text-align: center;
 }

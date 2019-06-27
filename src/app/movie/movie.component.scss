@@ -1,1 +1,62 @@
 @import '../../styles.scss';
+
+.generalInfo{
+    background-image: url(../../assets/cinema.jpg);
+    background-size: cover;
+}
+
+.backgroundColor{
+    color: $color-letra;
+    background-color: rgba(87, 5, 150, 0.632);
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 15em;
+    width: 98.9vw;
+    height: 90vh;
+}
+
+.coverPage{
+    height: 30em;
+    width: 25sem;
+    margin-right: 4em;
+}
+
+
+.titles{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2em;
+
+    & > h1 {
+        margin-right: 0.5em;
+    }
+
+    & > h3{
+        color: grey;
+    }
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 50%;
+    margin-bottom: 2em;
+    
+    & button{
+        all:unset;
+        border-radius: 50%;
+        padding: 0.5em;
+        
+        &:hover:not(.playTrailer){
+            color:black;
+            background-color: $color-letra;
+            cursor: pointer;
+        }
+
+    }
+        & .playTrailer:hover{
+            cursor: pointer;
+            color: grey;
+        }
+}
