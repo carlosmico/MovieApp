@@ -1,1 +1,33 @@
 @import '../../styles.scss';
+
+footer {
+    background-color: $color-principal-oscuro;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.2em;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+    }
+    
+    img{
+        height: 3.1em;
+    }
+
+    h1, h3 {
+        color: $color-acento;
+    }
+
+    ul {
+        list-style: none;
+        color: $color-fondo;
+    }
+
+    p {
+        color: $color-fondo;
+    }
+
+}
