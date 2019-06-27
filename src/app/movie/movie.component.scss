@@ -21,9 +21,11 @@
     margin-right: 4em;
 }
 
+
 .titles{
     display: flex;
     align-items: baseline;
+    margin-bottom: 2em;
 
     & > h1 {
         margin-right: 0.5em;
@@ -31,5 +33,15 @@
 
     & > h3{
         color: grey;
+    }
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    & button{
+        all:unset;
     }
 }
