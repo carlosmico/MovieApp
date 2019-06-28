@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-top-rate',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopRateComponent implements OnInit {
 
-  constructor() { }
+  movies: object[];
+  constructor(private MoviesService: MoviesService) { }
 
+   
   ngOnInit() {
+    this.MoviesService.getTopRateMovies().subscribe(value => {
+      this.movies = value.results;
+    }, err=> console.log(err));
   }
 
 }

@@ -1,0 +1,17 @@
+.movies{
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+padding: 5em;
+
+.movie{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    margin-top: 2em;
+}
+img {
+  flex-wrap: wrap;
+  width: 300px;
+  height: 400px;
+}}
