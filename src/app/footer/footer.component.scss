@@ -2,7 +2,7 @@
 
 footer {
     background-color: $color-principal-oscuro;
-    padding: 0.3em;
+    height: 50vh;
 }
 
 h3 {
@@ -14,16 +14,24 @@ i {
     font-size: 2em;
 }
 
+section {
+    background-image: url("../../assets/bowl-cinema-close-up-1353368_d.png");
+    background-size: cover;
+    height: 100%;
+    padding: 6em;
+}
+
 .footerDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
     justify-content: space-evenly;
+    text-align: justify;
 }
 
 .section1, .section2, .section3 {
-    width: 33%;
+    width: 25%;
+
 }
 
 p {
