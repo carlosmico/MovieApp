@@ -31,4 +31,8 @@ export class MoviesService {
     console.log(id)
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
   }
+  
+  getTopRatesMovies():Observable<any>{
+    return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
+  }
 }
