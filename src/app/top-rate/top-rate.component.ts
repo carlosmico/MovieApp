@@ -13,7 +13,7 @@ export class TopRateComponent implements OnInit {
 
    
   ngOnInit() {
-    this.MoviesService.getTopRatesMovies().subscribe(value => {
+    this.MoviesService.getTopRatedMovies().subscribe(value => {
       this.movies = value.results;
     }, err=> console.log(err));
   }

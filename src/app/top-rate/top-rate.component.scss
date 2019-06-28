@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 
-.top-rate{
+.top-rate {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@
         text-align: justify;
         position: relative;
 
-        .title {
+        h2 {
           font-size: 1.7em;
           text-align: center;
         }
@@ -49,10 +49,25 @@
 
         .description {
           margin-top: 1em;
-          height: 150px;
-          overflow-y: hidden !important;
+          height: 100px;
+          overflow: hidden;
           text-overflow: ellipsis;
         }
+        .moreInfo{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border: 1px solid black;
+          padding: 1em;
+          width: 100%;
+          text-align: center;
+        }
+
+         @media only screen and (max-width: 450px){
+           .moreInfo{
+             display: none;
+           }
+         }
       }
     }
 
