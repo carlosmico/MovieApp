@@ -44,6 +44,8 @@
     margin-bottom: 2em;
     
     & button{
+        height: 0.5em;
+        width: 1em;
         all:unset;
         border-radius: 50%;
         padding: 0.5em;
@@ -59,4 +61,12 @@
             cursor: pointer;
             color: grey;
         }
+}
+
+.titleOverview{
+    margin-bottom: 1em;
+}
+
+p{
+    margin-bottom: 1em;
 }
