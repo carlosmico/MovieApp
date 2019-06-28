@@ -7,6 +7,7 @@ import {API_KEY} from './config/moviesApi'
 const URLS = {
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
+  topRateMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
 }
 
 @Injectable({
@@ -24,5 +25,8 @@ export class MoviesService {
 
   getUpcomingMovies():any{
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
+  }
+  getTopRateMovies():any{
+  return this.http.get(`${URLS.topRateMovies}${API_KEY}`);
   }
 }
