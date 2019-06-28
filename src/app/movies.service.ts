@@ -22,7 +22,7 @@ export class MoviesService {
     return this.http.get(`${URLS.popularMovies}${API_KEY}`);
   }
 
-  getUpcomingMovies():any{
+  getUpcomingMovies():Observable<any>{
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
   }
 }
