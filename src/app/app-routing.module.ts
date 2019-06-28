@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'popular', component: PopularMoviesComponent},
   {path: 'topRated', component: MovieComponent},
   {path: 'upcoming', component: MovieComponent},
-  {path: 'popular/movie', component: MovieComponent},
+  {path: 'popular/movie/:id', component: MovieComponent},
 ];
 
 @NgModule({
