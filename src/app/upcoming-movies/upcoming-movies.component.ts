@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MoviesService} from '../movies.service';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-upcoming-movies',
@@ -7,14 +7,9 @@ import {MoviesService} from '../movies.service';
   styleUrls: ['./upcoming-movies.component.scss']
 })
 export class UpcomingMoviesComponent implements OnInit {
-  movies: Object[]
-
+  private movies: Object[];
   constructor(private moviesService: MoviesService) { }
-
-  ngOnInit() {
-    this.moviesService.getUpcomingMovies().subscribe(value => {
-      this.movies = value.results;
-    }, err=> console.log(err));
+  ngOnInit(): void {
+    this.moviesService.getUpcomingMovies().subscribe(value => this.movies = value.results, error => console.log(error))
   }
-
 }
