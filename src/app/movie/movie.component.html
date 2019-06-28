@@ -1,12 +1,12 @@
 
   <div class="generalInfo">
   <div class="backgroundColor">
-    <img src="../../assets/coverPage.jpg" alt="Cover Page" class="coverPage">
+    <img src={{movie.belongs_to_collection.poster_path}} alt="Cover Page" class="coverPage">
     <div class="text">
 
       <div class="titles">
-        <h1>Title</h1>
-        <h3>(year)</h3>
+        <h1>{{movie.title}}</h1>
+        <h3>{{movie.release_date}}</h3>
       </div>
 
       <div class="buttons">
@@ -20,7 +20,7 @@
 
       <div class="overview">
         <h3 class="titleOverview">Overview</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas exercitationem quo nesciunt, vitae voluptatibus illo! Quos, nisi tempore. Quos rem quidem dignissimos dolorum beatae quis corporis ex eos deserunt error.</p>
+        <p>{{movie.overview}}</p>
       </div>
 
       <div class="crew">

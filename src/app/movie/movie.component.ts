@@ -17,7 +17,7 @@ export class MovieComponent implements OnInit {
       this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
       this.movie = value; console.log(this.movie)})
       console.log(this.route.params)
-      console.log(params)
+      console.log(this.movie)
       console.log(params.id)
       
     })}}
