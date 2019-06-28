@@ -5,7 +5,8 @@ import {API_KEY} from './config/moviesApi'
 
 //API URLs
 const URLS = {
-  popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key='
+  popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
+  upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
 }
 
 @Injectable({
@@ -18,6 +19,10 @@ export class MoviesService {
 
   //Método que nos devuelve un Observable con las películas más populares
   getPopularMovies():any{
-      return this.http.get(`${URLS.popularMovies}${API_KEY}`);
+    return this.http.get(`${URLS.popularMovies}${API_KEY}`);
+  }
+
+  getUpcomingMovies():any{
+    return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
   }
 }
