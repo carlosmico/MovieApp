@@ -9,10 +9,11 @@
     color: $color-letra;
     background-color: rgba(87, 5, 150, 0.632);
     display: flex;
+    // flex-wrap: wrap;
     justify-content: space-around;
-    padding: 2em 15em;
+    padding: 2em 15%;
     width: 98.9vw;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .coverPage{
@@ -24,6 +25,7 @@
 
 .titles{
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     margin-bottom: 2em;
 
@@ -36,12 +38,13 @@
     }
 }
 
-.buttons{
+.menu{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
     width: 50%;
-    margin-bottom: 2em;
+    margin: 0em 0em 2em 0em;
     
     & button{
         height: 0.5em;
@@ -61,6 +64,10 @@
             cursor: pointer;
             color: grey;
         }
+}
+
+.score{
+    margin: 0em 0.3em;
 }
 
 .titleOverview{
