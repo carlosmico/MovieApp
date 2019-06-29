@@ -1,7 +1,7 @@
 
   <div class="generalInfo">
   <div class="backgroundColor">
-    <img src={{movie.belongs_to_collection.poster_path}} alt="Cover Page" class="coverPage">
+    <img src="{{movie.poster_path}}" alt="Cover Page" class="coverPage">
     <div class="text">
 
       <div class="titles">
@@ -10,7 +10,7 @@
       </div>
 
       <div class="buttons">
-        <span>User score</span>
+        <span>User score: {{movie.vote_average}}</span>
         <button class="addToList"><i class="fa fa-list" aria-hidden="true"></i></button>
         <button class="markAsFavorite"><i class="fa fa-heart" aria-hidden="true"></i></button>
         <button class="addWatchlist"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
