@@ -1,47 +1,59 @@
 @import '../../styles.scss';
 
-.generalInfo{
-    background-image: url(../../assets/cinema.jpg);
+
+
+body{
     background-size: cover;
 }
 
 .backgroundColor{
     color: $color-letra;
-    background-color: rgba(87, 5, 150, 0.632);
+    background-color: rgba(10, 5, 150, 0.632);
     display: flex;
     justify-content: space-around;
-    padding: 2em 15em;
+    padding: 4em 15%;
     width: 98.9vw;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .coverPage{
     height: 30em;
-    width: 25sem;
+    width: 25em;
     margin-right: 4em;
 }
 
 
 .titles{
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     margin-bottom: 2em;
-
+    
     & > h1 {
         margin-right: 0.5em;
     }
-
+    
     & > h3{
         color: grey;
     }
 }
 
-.buttons{
+.score{
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0 1.5em 1.5em 0.3em;
+}
+
+.titleGenres{
+    margin-left: 0.3em;
+}
+
+.menu{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: baseline;
     width: 50%;
-    margin-bottom: 2em;
+    margin: 0em 0em 2em 0em;
     
     & button{
         height: 0.5em;
@@ -63,10 +75,31 @@
         }
 }
 
+
 .titleOverview{
     margin-bottom: 1em;
+    
+}
+
+.overview p{
+    text-align: justify;
+    text-indent: 0.5em;
 }
 
 p{
     margin-bottom: 1em;
 }
+
+@media (max-width: 750px) { 
+    .backgroundColor{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .coverPage{
+        height: 25em;
+        width: 20em;
+        margin-bottom: 2em;
+    }
+ }
