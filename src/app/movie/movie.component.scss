@@ -3,8 +3,8 @@ $colors :  rgba(150, 5, 65, 0.632) rgba(10, 5, 150, 0.632) rgba(5, 106, 150, 0.6
 
 
 
-.generalInfo{
-    background-image: url(../../assets/cinema.jpg);
+body{
+    // background-image: url(../../assets/cinema.jpg);
     background-size: cover;
 }
 
@@ -77,6 +77,12 @@ $colors :  rgba(150, 5, 65, 0.632) rgba(10, 5, 150, 0.632) rgba(5, 106, 150, 0.6
 
 .titleOverview{
     margin-bottom: 1em;
+    
+}
+
+.overview p{
+    text-align: justify;
+    text-indent: 0.5em;
 }
 
 p{
