@@ -1,6 +1,5 @@
 
   <body class="generalInfo" background="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">
-      <!-- <img src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" alt="Cover Page" class="backdropPage"> -->
   <div class="backgroundColor">
   <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="Cover Page" class="coverPage">
     <div class="text">
@@ -11,8 +10,8 @@
       </div>
 
       <div class="genres">
-        <h3 class="titleGendres">Genres:</h3>
-        <div *ngFor = "let genre of genres"><p>{{genres.genre.name}}</p></div>
+        <h3 class="titleGenres">Genres:</h3>
+        <div *ngFor='let genre of genres'>{{genre.name}}</div>
         
       </div>
       
