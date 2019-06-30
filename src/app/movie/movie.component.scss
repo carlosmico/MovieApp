@@ -1,4 +1,7 @@
 @import '../../styles.scss';
+$colors :  rgba(150, 5, 65, 0.632) rgba(10, 5, 150, 0.632) rgba(5, 106, 150, 0.632) rgba(5, 150, 87, 0.632) rgba(5, 150, 27, 0.632) rgba(106, 150, 5, 0.632);
+
+
 
 .generalInfo{
     background-image: url(../../assets/cinema.jpg);
@@ -7,9 +10,8 @@
 
 .backgroundColor{
     color: $color-letra;
-    background-color: rgba(87, 5, 150, 0.632);
+    background-color: nth($colors,  random(length(&colors)));
     display: flex;
-    // flex-wrap: wrap;
     justify-content: space-around;
     padding: 2em 15%;
     width: 98.9vw;
@@ -28,14 +30,20 @@
     flex-wrap: wrap;
     align-items: baseline;
     margin-bottom: 2em;
-
+    
     & > h1 {
         margin-right: 0.5em;
     }
-
+    
     & > h3{
         color: grey;
     }
+}
+
+.score{
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0 1.5em 1.5em 0.3em;
 }
 
 .menu{
@@ -66,9 +74,6 @@
         }
 }
 
-.score{
-    margin: 0 1.5em 0 0.3em;
-}
 
 .titleOverview{
     margin-bottom: 1em;
