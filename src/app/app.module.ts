@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { MovieComponent } from './movie/movie.component';
-import { PopularMoviesComponent } from './popular-movies/popular-movies.component';
-import { UpcomingMoviesComponent } from './upcoming-movies/upcoming-movies.component';
-import { TopRateComponent } from './top-rate/top-rate.component';
+import { MovieComponent } from './movies/movie/movie.component';
+import { PopularMoviesComponent } from './movies/popular-movies/popular-movies.component';
+import { UpcomingMoviesComponent } from './movies/upcoming-movies/upcoming-movies.component';
+import { TopRateComponent } from './movies/top-rate/top-rate.component';
 
 @NgModule({
   declarations: [

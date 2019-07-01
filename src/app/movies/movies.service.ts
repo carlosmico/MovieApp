@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import {API_KEY} from './config/moviesApi' 
+import {API_KEY} from '../config/moviesApi' 
 
 //API URLs
 const URLS = {
