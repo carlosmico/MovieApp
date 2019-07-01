@@ -10,21 +10,45 @@ import { MoviesService } from '../movies.service';
 export class UpcomingMoviesComponent implements OnInit {
   
   constructor(private moviesService: MoviesService) { }
-  
+  actualPage:number = 1
+  maxPage:number
   private movies: Object[];
-  page=1;
   
-  ngOnInit(): void {
-    this.moviesService.getUpcomingMovies(1).subscribe(value => this.movies = value.results, error => console.log(error))
+  ngOnInit() {
+    this.loadMovies();
   }
 
-  incrementPage() {
-    if(this.movies.length>this.page)this.page++;
-    this.moviesService.getUpcomingMovies(this.page).subscribe(value => this.movies = value.results, error => console.log(error))
+  loadMovies():void{
+    this.moviesService.getUpcomingMovies(this.actualPage).subscribe(value=> {
+      this.movies = value.results;
+      this.maxPage = value.total_pages;
+
+      console.log(this.maxPage)
+    }, err=>console.log(err));
   }
 
-  decrementPage() {
-    if(this.page>1)this.page--;
-    this.moviesService.getUpcomingMovies(this.page).subscribe(res=>this.movies = res.results, error => console.log(error))
+  firstPage():void{
+    this.actualPage = 1;
+    this.loadMovies()
   }
+
+  previousPage():void{
+    if(this.actualPage > 1){
+      this.actualPage--;
+      this.loadMovies()
+    }
+  }
+
+  nextPage():void{
+    if(this.actualPage < this.maxPage){
+      this.actualPage++;
+      this.loadMovies();
+    }
+  }
+
+  lastPage():void{
+    this.actualPage = this.maxPage;
+    this.loadMovies()
+  }
+
 }
