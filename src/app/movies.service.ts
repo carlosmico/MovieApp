@@ -19,11 +19,7 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   //Método que nos devuelve un Observable con las películas más populares
-  getPopularMovies():any{
-    return this.http.get(`${URLS.popularMovies}${API_KEY}`);
-  }
-
-  getPopularMoviesByPage(page:number):any{
+  getPopularMovies(page:number):any{
     return this.http.get(`${URLS.popularMovies}${API_KEY}&page=${page}`);
   }
   

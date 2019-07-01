@@ -23,7 +23,7 @@ export class PopularMoviesComponent implements OnInit {
   }
 
   loadMovies():void{
-    this.moviesService.getPopularMoviesByPage(this.actualPage).subscribe(value=> {
+    this.moviesService.getPopularMovies(this.actualPage).subscribe(value=> {
       this.movies = value.results;
       this.maxPage = value.total_pages;
 
