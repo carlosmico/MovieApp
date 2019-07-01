@@ -24,8 +24,8 @@ export class MoviesService {
     return this.http.get(`${URLS.popularMovies}${API_KEY}`);
   }
 
-  getUpcomingMovies():Observable<any>{
-    return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
+  getUpcomingMovies(page:number):Observable<any>{
+    return this.http.get(`${URLS.upcomingMovies}${API_KEY}&page=${page}`);
   }
 
   getMovieById(id):any{
