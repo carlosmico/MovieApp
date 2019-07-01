@@ -1,1 +1,20 @@
-<p>top-rate works!</p>
+<div class="top-rate">
+    <h1>Top Rate</h1>
+  
+    <div class="movies">
+    <div class="movie" [routerLink]='["movie",movie.id]' *ngFor='let movie of movies'>
+        
+          <div class="leftSection">
+            <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+          </div>
+          
+          <div class="rightSection">
+            <h2>{{movie.title}}</h2>
+            
+            <p>Fecha de lanzamiento: {{movie.release_date}}</p>
+            <p class="description">Description: {{movie.overview}}</p>
+            <p class="moreInfo">More Info.</p>
+          </div>
+        </div>
+    </div>
+  </div>

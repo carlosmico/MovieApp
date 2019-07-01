@@ -5,13 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component'
 import {PopularMoviesComponent} from './popular-movies/popular-movies.component'
 import {MovieComponent} from './movie/movie.component'
+import {TopRateComponent} from './top-rate/top-rate.component'
+import { UpcomingMoviesComponent } from './upcoming-movies/upcoming-movies.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'popular', component: PopularMoviesComponent},
-  {path: 'topRated', component: MovieComponent},
-  {path: 'upcoming', component: MovieComponent},
-  {path: 'popular/movie', component: MovieComponent},
+  {path: 'topRated', component: TopRateComponent},
+  {path: 'upcoming', component: UpcomingMoviesComponent},
+  {path: 'popular/movie/:id', component: MovieComponent},
+  {path: 'upcoming/movie/:id', component: MovieComponent},
+  {path: 'topRated/movie/:id', component: MovieComponent},
 ];
 
 @NgModule({

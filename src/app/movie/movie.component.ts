@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MoviesService} from '../movies.service';
+import {ActivatedRoute} from '@angular/router'
+
 
 @Component({
   selector: 'app-movie',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-
-  constructor() { }
+  movie:Object
+  constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
-  }
+    console.log('as ')
+    this.route.params.subscribe(params => {
+      
+      this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
+      this.movie = value; 
+      const genres = value.genres;
+      console.log(this.movie); console.log(genres)})
+      console.log(this.route.params)
+      console.log(this.movie)
+      console.log(params.id)
+      
+    })}}
 
-}
+
+
+    
