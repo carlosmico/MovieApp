@@ -13,7 +13,7 @@ body{
     justify-content: space-around;
     padding: 4em 15%;
     width: 98.9vw;
-    min-height: 90vh;
+    min-height: 90%;
 }
 
 .coverPage{
@@ -73,6 +73,7 @@ body{
     align-items: baseline;
     width: 50%;
     margin: 0em 0em 2em 0em;
+
     
     & button{
         height: 0.5em;
@@ -81,12 +82,22 @@ body{
         border-radius: 50%;
         padding: 0.5em;
         
-        &:hover:not(.playTrailer){
+        &:hover:not(.playTrailer):not(.similarMovies){
             color:black;
             background-color: $color-letra;
             cursor: pointer;
         }
 
+    }
+    & .similarMovies{
+        align-self: stretch;
+        font-size: 2em;
+        font-weight: 400;
+
+        &:hover{
+            cursor: pointer;
+            color: grey;
+        }
     }
         & .playTrailer:hover{
             cursor: pointer;
@@ -107,6 +118,10 @@ body{
 
 p{
     margin-bottom: 1em;
+}
+
+.similarFilms{
+    height: 100vh;
 }
 
 @media (max-width: 1025px) { 
