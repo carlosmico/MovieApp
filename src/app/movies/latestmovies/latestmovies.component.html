@@ -1,3 +1,5 @@
-<div class="suggestion">
-    <img src='https://image.tmdb.org/t/p/w500/{{poster_path}}' alt={{movie.title}}>
+<!-- <h1>Hola Mundo</h1> -->
+
+<div class="suggestion" *ngIf='movie'>
+    <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
   </div>

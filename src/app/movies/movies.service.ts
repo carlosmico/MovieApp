@@ -8,7 +8,7 @@ const URLS = {
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
   topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
-  latestMovies: 'https://api.themoviedb.org/3/movie/latest?language=en-US&api_key=',
+  latestMovies: 'https://api.themoviedb.org/3/movie/latest?api_key=',
 }
 
 @Injectable({

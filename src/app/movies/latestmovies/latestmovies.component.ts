@@ -9,13 +9,15 @@ import { MoviesService } from '../movies.service'
 })
 export class LatestmoviesComponent implements OnInit {
 
-  movies: object[];
+  movie:Object;
   constructor(private MoviesService: MoviesService) { }
 
 
   ngOnInit() {
     this.MoviesService.getlatestMovies().subscribe(value => {
-      this.movies = value.results;
+      console.log(value);
+      
+      this.movie = value;
     }, err => console.log(err));
   }
 
