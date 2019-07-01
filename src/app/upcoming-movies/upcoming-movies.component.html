@@ -7,10 +7,14 @@
   
   
   <div class="movies">
-    <div class="movie" [routerLink]="['topRated']" *ngFor='let movie of movies'>
-      <div class="leftSection">
-        <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
-      </div>
+    <div class="movie" [routerLink]='["movie",movie.id]' *ngFor='let movie of movies'>
+    
+        <div class="leftSection">
+          <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+        </div>
+
+        <div class="rightSection">
+          <h2 class="title">{{movie.title}}</h2>
 
       <div class="rightSection">
         <h2>{{movie.title}}</h2>
@@ -21,4 +25,3 @@
       </div>
     </div>
   </div>
-</div>

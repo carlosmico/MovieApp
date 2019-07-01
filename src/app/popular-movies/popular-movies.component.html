@@ -2,8 +2,7 @@
   <h1>Popular Movies</h1>
 
   <div class="movies">
-    <div class="movie"  *ngFor='let movie of movies'>
-      <div [routerLink]='["movie",movie.id]'>
+    <div class="movie" [routerLink]='["movie",movie.id]'  *ngFor='let movie of movies'>
       <div class="leftSection">
         <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
       </div>
@@ -16,6 +15,5 @@
         <p class="description">{{movie.overview}}</p>
       </div>
     </div>
-  </div>
   </div>
 </div>
