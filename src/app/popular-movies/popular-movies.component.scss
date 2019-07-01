@@ -12,6 +12,37 @@
     text-align: center;
   }
 
+  .navigation{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+
+    span{
+      font-size: 1.5em;
+      margin-left: 0.3em;
+      margin-right: 0.3em;
+    }
+
+    i{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-style: initial;
+      height: 30px;
+      width: 40px;
+      text-align: center;
+      background-color: #222831;
+      color: #00adb5;
+      border-radius: 5px;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+      cursor: pointer;
+    }
+  }
+
+  
+
   .movies {
     display: flex;
     justify-content: center;

@@ -38,15 +38,34 @@ body{
     }
 }
 
-.score{
-    font-size: 1.5em;
-    font-weight: 500;
-    margin: 0 1.5em 1.5em 0.3em;
+.genres{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1em;
 }
 
 .titleGenres{
-    margin-left: 0.3em;
+    margin:0  0.3em;
 }
+
+.genre{
+    margin-left: 0.5em;
+}
+
+.movieScore{
+    display: flex;
+    align-items: baseline;
+    margin-bottom:  1.5em ;
+
+    & h4 {
+        margin:0  0.3em;
+    }
+
+    & div {
+        font-size: 1.5em;
+    }
+}
+
 
 .menu{
     display: flex;
@@ -98,7 +117,7 @@ p{
     }
 
     .coverPage{
-        height: 25em;
+        height: 27em;
         width: 20em;
         margin-bottom: 2em;
     }
