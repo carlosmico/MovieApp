@@ -28,12 +28,20 @@ export class MoviesService {
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}`);
   }
 
+  getTopRatedMovies():Observable<any>{
+    return this.http.get(`${URLS.topRatedMovies}${API_KEY}`);
+  }
+
   getMovieById(id):any{
     console.log(id)
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
   }
-  
-  getTopRatedMovies():Observable<any>{
-    return this.http.get(`${URLS.topRatedMovies}${API_KEY}`);
+
+  getVideosById(id):any{
+    return this.http.get(`
+    https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
   }
+
+  
+  
 }

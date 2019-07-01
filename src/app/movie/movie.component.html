@@ -10,13 +10,13 @@
       </div>
 
       <div class="genres">
-        <h3 class="titleGenres">Genres:</h3>
-        <div *ngFor='let genre of genres'>{{genre.name}}</div>
-        
+        <h4 class="titleGenres">Genres:</h4> 
+        <div class = "genre" *ngFor='let genre of genres'>{{genre.name}}  </div>
       </div>
       
-      <div class="score">
-        <span>User score: {{movie.vote_average}}</span>
+      <div class="movieScore">
+        <h4>User score: </h4>
+        <div class="score">{{movie.vote_average}}</div>
       </div>
       
       <div class="menu">
@@ -26,6 +26,7 @@
         <button class="addWatchlist" title="Add to your watchlist"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
         <button class="rateIt" title="Rate it!"><i class="fa fa-star" aria-hidden="true"></i></button>
         </div>
+
         <div class="trailer">
         <button class="playTrailer"><i class="fa fa-play" aria-hidden="true"></i> Play trailer</button>
       </div>
