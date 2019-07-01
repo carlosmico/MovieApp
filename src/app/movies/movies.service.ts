@@ -28,8 +28,8 @@ export class MoviesService {
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}&page=${page}`);
   }
 
-  getTopRatedMovies():Observable<any>{
-    return this.http.get(`${URLS.topRatedMovies}${API_KEY}`);
+  getTopRatedMovies(page:number):Observable<any>{
+    return this.http.get(`${URLS.topRatedMovies}${API_KEY}&page=${page}`);
   }
 
   getMovieById(id):any{
@@ -49,6 +49,5 @@ export class MoviesService {
   getlatestMovies():Observable<any>{
     return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
-  
   
 }
