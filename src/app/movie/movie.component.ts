@@ -10,22 +10,27 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class MovieComponent implements OnInit {
   movie:Object
+  genres: Object[];
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
-    console.log('as ')
     this.route.params.subscribe(params => {
       
       this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
       this.movie = value; 
-      const genres = value.genres;
-      console.log(this.movie); console.log(genres)})
-      console.log(this.route.params)
-      console.log(this.movie)
-      console.log(params.id)
+      this.genres = value.genres;
+      console.log(this.movie);})
       
-    })}}
+    })
+    this.route.params.subscribe(params => {
+      this.moviesServices.getVideosById(params.id).subscribe(value =>{ 
+      this.genres = value; 
+      console.log(this.genres); })
+  
+})
 
 
 
-    
+
+  }
+}
