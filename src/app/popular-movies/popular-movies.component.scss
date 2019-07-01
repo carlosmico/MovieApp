@@ -54,6 +54,22 @@
           height: 100px;
           overflow-y: hidden !important;
           text-overflow: ellipsis;
+          margin-bottom: 2em;
+        }
+
+        .moreInfo {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          padding: 1em;
+          font-weight: bold;
+          text-align: center;
+          align-self: flex-end;
+
+          &:hover{
+            color: $color-acento;
+          }
         }
       }
     }
