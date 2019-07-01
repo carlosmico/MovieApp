@@ -11,6 +11,8 @@ import {ActivatedRoute} from '@angular/router'
 export class MovieComponent implements OnInit {
   movie:Object
   genres: Object[];
+  videos: Object[];
+  similarFilms: Object[];
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
@@ -24,13 +26,16 @@ export class MovieComponent implements OnInit {
     })
     this.route.params.subscribe(params => {
       this.moviesServices.getVideosById(params.id).subscribe(value =>{ 
-      this.genres = value; 
-      console.log(this.genres); })
+      this.videos = value.results; 
+      console.log(this.videos); })
+
+    this.route.params.subscribe(params => {
+      this.moviesServices.getSimilarFilms(params.id).subscribe(value =>{ 
+       this.similarFilms = value; 
+        console.log(this.similarFilms); })
   
-})
+    })
 
-
-
-
+   })
   }
 }

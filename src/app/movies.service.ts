@@ -37,10 +37,13 @@ export class MoviesService {
   }
 
   getVideosById(id):any{
-    return this.http.get(`
-    https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
   }
 
+  getSimilarFilms(id):any{
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1
+    `);
+  }
   
   
 }
