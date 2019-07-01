@@ -1,20 +1,38 @@
 <div class="general-movies">
     <h1>Top Rate</h1>
   
-    <div class="movies">
+    
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
+  </div>
+
+  <div class="movies">
     <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor='let movie of movies'>
-        
-          <div class="leftSection">
-            <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
-          </div>
-          
-          <div class="rightSection">
-            <h2>{{movie.title}}</h2>
-            
-            <p>Fecha de lanzamiento: {{movie.release_date}}</p>
-            <p class="description">Description: {{movie.overview}}</p>
-            <p class="moreInfo">More Info.</p>
-          </div>
-        </div>
+      <div class="leftSection">
+        <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+      </div>
+
+      <div class="rightSection">
+        <h2 class="title">{{movie.title}}</h2>
+
+        <p class="date">{{movie.release_date}}</p>
+
+        <p class="description">{{movie.overview}}</p>
+
+        <p class="moreInfo">More Info</p>
+      </div>
     </div>
   </div>
+
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
+  </div>
+</div>

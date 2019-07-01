@@ -12,6 +12,7 @@ import { PopularMoviesComponent } from './movies/popular-movies/popular-movies.c
 import { UpcomingMoviesComponent } from './movies/upcoming-movies/upcoming-movies.component';
 import { TopRateComponent } from './movies/top-rate/top-rate.component';
 import { LatestmoviesComponent } from './movies/latestmovies/latestmovies.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LatestmoviesComponent } from './movies/latestmovies/latestmovies.compon
     PopularMoviesComponent,
     UpcomingMoviesComponent,
     TopRateComponent,
-    LatestmoviesComponent
+    LatestmoviesComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
