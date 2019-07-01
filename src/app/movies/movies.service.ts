@@ -7,7 +7,8 @@ import {API_KEY} from '../config/moviesApi'
 const URLS = {
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
-  topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key='
+  topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
+  latestMovies: 'https://api.themoviedb.org/3/movie/latest?language=en-US&api_key=',
 }
 
 @Injectable({
@@ -43,6 +44,10 @@ export class MoviesService {
   getSimilarFilms(id):any{
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1
     `);
+  }
+
+  getlatestMovies():Observable<any>{
+    return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
   
   
