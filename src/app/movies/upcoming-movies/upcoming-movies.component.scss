@@ -1,6 +1,7 @@
-@import '../../styles.scss';
+@import '../../../styles.scss';
 
-.popular-movies {
+
+.upcoming-movies {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,39 +10,7 @@
   h1 {
     color: $color-acento;
     padding: 1em;
-    text-align: center;
   }
-
-  .navigation{
-    display: flex;
-    align-items: center;
-    padding: 1em;
-
-    span{
-      font-size: 1.5em;
-      margin-left: 0.3em;
-      margin-right: 0.3em;
-    }
-
-    i{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-style: initial;
-      height: 30px;
-      width: 40px;
-      text-align: center;
-      background-color: #222831;
-      color: #00adb5;
-      border-radius: 5px;
-      margin-right: 0.5em;
-      margin-left: 0.5em;
-      cursor: pointer;
-    }
-  }
-
-  
 
   .movies {
     display: flex;
@@ -69,7 +38,7 @@
         text-align: justify;
         position: relative;
 
-        .title {
+        h2 {
           font-size: 1.7em;
           text-align: center;
         }
@@ -83,25 +52,29 @@
         .description {
           margin-top: 1em;
           height: 100px;
-          overflow-y: hidden !important;
+          overflow: hidden;
           text-overflow: ellipsis;
-          margin-bottom: 2em;
         }
-
-        .moreInfo {
+        .moreInfo{
           position: absolute;
           bottom: 0;
-          right: 0;
           left: 0;
+          // border: 1px solid black;
           padding: 1em;
-          font-weight: bold;
+          width: 100%;
           text-align: center;
-          align-self: flex-end;
 
           &:hover{
-            color: $color-acento;
+            text-shadow: 1px 1px 2px #000000;
+
           }
         }
+
+         @media only screen and (max-width: 450px){
+           .moreInfo{
+             display: none;
+           }
+         }
       }
     }
 
