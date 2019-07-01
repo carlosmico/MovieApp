@@ -4,6 +4,7 @@
 
 body{
     background-size: cover;
+    width: 99.5vw;
 }
 
 .backgroundColor{
@@ -12,7 +13,7 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 4em 15%;
-    width: 98.9vw;
+    width: 99.5vw;
     min-height: 90%;
 }
 
@@ -82,23 +83,14 @@ body{
         border-radius: 50%;
         padding: 0.5em;
         
-        &:hover:not(.playTrailer):not(.similarMovies){
+        &:hover:not(.playTrailer){
             color:black;
             background-color: $color-letra;
             cursor: pointer;
         }
 
     }
-    & .similarMovies{
-        align-self: stretch;
-        font-size: 2em;
-        font-weight: 400;
-
-        &:hover{
-            cursor: pointer;
-            color: grey;
-        }
-    }
+   
         & .playTrailer:hover{
             cursor: pointer;
             color: grey;

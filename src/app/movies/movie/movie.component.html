@@ -25,7 +25,6 @@
         <button class="markAsFavorite" title="Mark as favorite"><i class="fa fa-heart" aria-hidden="true"></i></button>
         <button class="addWatchlist" title="Add to your watchlist"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
         <button class="rateIt" title="Rate it!"><i class="fa fa-star" aria-hidden="true"></i></button>
-        <button class="similarMovies" title="Similar Movies">. . .</button>
       </div>
       
       <div class="trailer">
@@ -41,8 +40,24 @@
 </div>
 </body>
 
-<div class="similarFilms" *ngFor="let film of similarFilms">
+<div class="moreInfo">
+<div class="similarFilmsByGenre">
 <h3>Similar Films by Genre</h3>
+<div class="similarFilms"*ngFor="let similarMovie of similarMovies" >
+<div class="leftSection">
+  <img src='https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}' alt={{similarMovie.title}}>
+</div>
 
+<div class="rightSection">
+  <h2 class="title">{{similarMovie.title}}</h2>
+
+  <p class="date">{{similarMovie.release_date}}</p>
+
+  <p class="description">{{similarMovie.overview}}</p>
+
+  <p class="moreInfo">More Info</p>
+</div>
+</div>
+</div>
 </div>
 
