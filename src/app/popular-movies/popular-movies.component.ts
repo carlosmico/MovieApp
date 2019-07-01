@@ -8,14 +8,51 @@ import {MoviesService} from '../movies.service'
 })
 
 export class PopularMoviesComponent implements OnInit {
+  actualPage:number = 1
+  maxPage:number
   movies: Object[]
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.moviesService.getPopularMovies().subscribe(value => {
+    this.loadMovies();
+
+    // this.moviesService.getPopularMovies().subscribe(value => {
+    //   this.movies = value.results;
+    // }, err=> console.log(err));
+  }
+
+  loadMovies():void{
+    this.moviesService.getPopularMovies(this.actualPage).subscribe(value=> {
       this.movies = value.results;
-    }, err=> console.log(err));
+      this.maxPage = value.total_pages;
+
+      console.log(this.maxPage)
+    }, err=>console.log(err));
+  }
+
+  firstPage():void{
+    this.actualPage = 1;
+    this.loadMovies()
+  }
+
+  previousPage():void{
+    if(this.actualPage > 1){
+      this.actualPage--;
+      this.loadMovies()
+    }
+  }
+
+  nextPage():void{
+    if(this.actualPage < this.maxPage){
+      this.actualPage++;
+      this.loadMovies();
+    }
+  }
+
+  lastPage():void{
+    this.actualPage = this.maxPage;
+    this.loadMovies()
   }
 
 }

@@ -1,8 +1,16 @@
 <div class="popular-movies">
   <h1>Popular Movies</h1>
 
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
+  </div>
+
   <div class="movies">
-    <div class="movie" [routerLink]='["movie",movie.id]'  *ngFor='let movie of movies'>
+    <div class="movie" [routerLink]='["movie",movie.id]' *ngFor='let movie of movies'>
       <div class="leftSection">
         <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
       </div>
@@ -13,7 +21,17 @@
         <p class="date">{{movie.release_date}}</p>
 
         <p class="description">{{movie.overview}}</p>
+
+        <p class="moreInfo">More Info</p>
       </div>
     </div>
+  </div>
+
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
   </div>
 </div>
