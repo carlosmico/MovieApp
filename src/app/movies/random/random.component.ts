@@ -22,15 +22,16 @@ export class RandomComponent implements OnInit {
       this.page_random = Math.floor(Math.random() * this.max_pages);
 
       this.moviesService.getPopularMovies(this.page_random).subscribe(value => {
-        console.log(value);
+        // console.log(value);
         this.randomMovie = value.results[Math.floor(Math.random() * value.results.length)]
+      
+    // console.log(this.randomMovie);
       }, err => console.log(err)
       )
 
     }, err => console.log(err)
     )
 
-    console.log(this.page_random);
 
 
   }

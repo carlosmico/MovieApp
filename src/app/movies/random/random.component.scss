@@ -2,11 +2,12 @@
 @import '../general-movies.scss';
 
 .movie{
-    min-width: max-content;
+    width: 10vw;
     min-height: min-content;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1em;
   
 
 }

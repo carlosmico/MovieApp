@@ -2,17 +2,17 @@
     <h1>¿has visto esta película?</h1>
 <div>
   <div class="movies">
-      <div class="movie" >
+      <div class="movie"[routerLink]='["/movie",randomMovie?.id]'>
         <div class="leftSection">
-          <img src='https://image.tmdb.org/t/p/w500/{{randomMovie.poster_path}}' alt={{randomMovie.title}}>
+          <img src='https://image.tmdb.org/t/p/w500/{{randomMovie?.poster_path}}' alt={{randomMovie?.title}}>
         </div>
   
         <div class="rightSection">
-          <h2 class="title">{{randomMovie.title}}</h2>
+          <h2 class="title">{{randomMovie?.title}}</h2>
   
-          <p class="date">{{randomMovie.release_date}}</p>
+          <p class="date">{{randomMovie?.release_date}}</p>
   
-          <!-- <p class="description">{{randomMovie.overview}}</p> -->
+          <!-- <p class="description">{{randomMovie?.overview}}</p> -->
   
           <!-- <p class="moreInfo">More Info</p> -->
         </div>
