@@ -118,31 +118,55 @@ p{
     background-color: $color-fondo;
     padding-top: 1.5em;
     
-    & .similarMoviesByGenre{
-        text-align: center;
+    & .similarMoviesByGenre {
         width: 99.5vw;
-       
+
+        & .titleSimilarMoviesByGenre {
+            text-align: center;
         
-        & .similarMoviesTitle {
-            margin-left: 1em;
-            position: sticky;
-            color: $color-acento;
-            align-self: center;
-            margin-bottom: 1.5em;
+        
+            & .similarMoviesTitle {
+                margin-left: 1em;
+                position: sticky;
+                color: $color-acento;
+                align-self: center;
+                margin-bottom: 1.5em;
+            }
         }
 
         & .similarMovies{
             display: flex;
             overflow-x: scroll;
+            
 
             & .similarMovie{
-                display: flex;
-                word-wrap: break-word;
                 width: 20em;
+                margin: 0 0.5em ;
+                box-shadow: 0px 0px 10px 0px rgba(173, 173, 173, 1);
+                cursor: pointer;
 
-                & .similarMovieImage{
+                & .similarMovieImageContainer{
                     width: 10em;
                     height: 14em;
+
+                    & .moreInfo{
+                        display: none;
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+                        background-color: rgba(173, 173, 173, 0.5);
+                        color: $color-letra;
+                        & span{
+                            position: absolute;
+                            bottom: 50%;
+                            right: 40%;
+                        }
+                    }
+
+                    & .similarMovieImage{
+                        width: 10em;
+                        height: 14em;
+                    }
                 }
 
             }
