@@ -24,8 +24,16 @@ export class MoviesService {
     return this.http.get(`${URLS.genres}${API_KEY}`);
   }
 
-  getMoviesByGenre(page:number, genreId:number):any{
-    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&with_genres=${genreId}`)
+  getMoviesByGenre(page:number, genres:string):any{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&with_genres=${genres}`)
+  }
+
+  getMoviesByYear(page:number, year:string):any{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&year=${year}`)
+  }
+
+  getMoviesByYearAndGenre(page:number, year:string, genres:string):any{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&year=${year}&with_genres=${genres}`)
   }
 
   //Método que nos devuelve un Observable con las películas más populares

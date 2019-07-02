@@ -29,8 +29,6 @@
       }
     }
 
-
-
     //Links menú
     .nav-link {
       color: $color-letra;
@@ -56,6 +54,12 @@
       padding: 1em;
       flex-direction: row;
       justify-content: space-evenly;
+    }
+
+    @media(max-width: 320px){
+      .navbar-nav{
+        flex-direction: column;
+      }
     }
   }
 
