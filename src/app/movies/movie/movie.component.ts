@@ -13,7 +13,10 @@ export class MovieComponent implements OnInit {
   genres: Object[];
   videos: Object[];
   similarMovies: Object[];
-  show: boolean = false;
+  showInfo: boolean = false;
+  showInfoSimilar: boolean = false;
+  
+
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
@@ -38,11 +41,23 @@ export class MovieComponent implements OnInit {
         
         
       })
-      
-      
-      
     }
-  showItem (): void{
-    this.show = true;
+
+  showMoreInfo (similarMovie): void{
+    similarMovie['showInfo']=true
   }
+
+  hideMoreInfo(similarMovie) : void{
+    similarMovie['showInfo']=false
+  }
+
+  showTheInfo (): void{
+    this.showInfoSimilar = true;
+  }
+
+  hideTheInfo() : void{
+    this.showInfoSimilar = false;
+  }
+
+
   }
