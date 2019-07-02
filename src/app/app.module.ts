@@ -14,6 +14,8 @@ import { TopRateComponent } from './movies/top-rate/top-rate.component';
 import { LatestmoviesComponent } from './movies/latestmovies/latestmovies.component';
 import { MainComponent } from './main/main.component';
 import { RandomComponent } from './movies/random/random.component';
+import { DiscoverMoviesComponent } from './movies/discover-movies/discover-movies.component';
+import { Notfound404Component } from './notfound404/notfound404.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RandomComponent } from './movies/random/random.component';
     TopRateComponent,
     LatestmoviesComponent,
     MainComponent,
-    RandomComponent
+    RandomComponent,
+    DiscoverMoviesComponent,
+    Notfound404Component
   ],
   imports: [
     BrowserModule,

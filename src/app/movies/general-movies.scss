@@ -46,6 +46,10 @@
     justify-content: center;
     flex-wrap: wrap;
 
+    .moviesNotFound{
+      font-size: 1.2em;
+    }
+
     .movie {
       display: flex;
       margin: 1em;

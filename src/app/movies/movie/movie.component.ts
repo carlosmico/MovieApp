@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {MoviesService} from '../movies.service';
 import {ActivatedRoute} from '@angular/router'
 
@@ -12,7 +12,8 @@ export class MovieComponent implements OnInit {
   movie:Object
   genres: Object[];
   videos: Object[];
-  similarFilms: Object[];
+  similarMovies: Object[];
+  show: boolean = false;
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
@@ -28,14 +29,20 @@ export class MovieComponent implements OnInit {
       this.moviesServices.getVideosById(params.id).subscribe(value =>{ 
       this.videos = value.results; 
       console.log(this.videos); })
-
-    this.route.params.subscribe(params => {
-      this.moviesServices.getSimilarFilms(params.id).subscribe(value =>{ 
-       this.similarFilms = value; 
-        console.log(this.similarFilms); })
-  
     })
 
-   })
+    this.route.params.subscribe(params => {
+      this.moviesServices.getSimilarMovies(params.id).subscribe(value =>{ 
+       this.similarMovies = value.results; 
+        console.log(this.similarMovies); })
+        
+        
+      })
+      
+      
+      
+    }
+  showItem (): void{
+    this.show = true;
   }
-}
+  }

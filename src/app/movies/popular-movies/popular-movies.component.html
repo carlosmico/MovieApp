@@ -1,6 +1,17 @@
 <div class="general-movies">
   <h1>Popular Movies</h1>
 
+  <!-- <div class="dropdown filters">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Genre
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button" *ngFor='let genre of genres'
+        (click)="filterByGenre($event, genre)">{{genre.name}}</button>
+    </div>
+  </div> -->
+
   <div class="navigation">
     <i (click)="firstPage()">1</i>
     <i class="fas fa-arrow-left" (click)="previousPage()"></i>
