@@ -112,8 +112,42 @@ p{
     margin-bottom: 1em;
 }
 
-.similarFilms{
-    height: 100vh;
+.moreInfo{
+    width: 99.5vw;
+    position: relative;
+    background-color: $color-fondo;
+    padding-top: 1.5em;
+    
+    & .similarMoviesByGenre{
+        text-align: center;
+        width: 99.5vw;
+       
+        
+        & .similarMoviesTitle {
+            margin-left: 1em;
+            position: sticky;
+            color: $color-acento;
+            align-self: center;
+            margin-bottom: 1.5em;
+        }
+
+        & .similarMovies{
+            display: flex;
+            overflow-x: scroll;
+
+            & .similarMovie{
+                display: flex;
+                word-wrap: break-word;
+                width: 20em;
+
+                & .similarMovieImage{
+                    width: 10em;
+                    height: 14em;
+                }
+
+            }
+        }
+    }
 }
 
 @media (max-width: 1025px) { 

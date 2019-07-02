@@ -40,24 +40,28 @@
 </div>
 </body>
 
+
 <div class="moreInfo">
-<div class="similarFilmsByGenre">
-<h3>Similar Films by Genre</h3>
-<div class="similarFilms"*ngFor="let similarMovie of similarMovies" >
-<div class="leftSection">
-  <img src='https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}' alt={{similarMovie.title}}>
-</div>
+  
+  <div class="similarMoviesByGenre">
+      <h3 class="similarMoviesTitle">Similar Films by Genre</h3>
+  <div class="similarMovies">
+  <div class="similarMovie" *ngFor="let similarMovie of similarMovies" >
+    <div class="similarMovieImage">
+      <img class="similarMovieImage" src='https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}' alt='{{similarMovie.title}}'>
+    </div>
 
-<div class="rightSection">
-  <h2 class="title">{{similarMovie.title}}</h2>
+    <div class="similarMovieText">
+      <h2 class="similarMovieTitle">{{similarMovie.title}}</h2>
 
-  <p class="date">{{similarMovie.release_date}}</p>
+      <p class="similarMovieDate">{{similarMovie.release_date}}</p>
 
-  <p class="description">{{similarMovie.overview}}</p>
+      <p class="similarMovieDescription">{{similarMovie.overview}}</p>
 
-  <p class="moreInfo">More Info</p>
-</div>
-</div>
-</div>
-</div>
+      <p class="moreInfo">More Info</p>
+    </div>
+  </div>
+  </div>
+  </div>
+</div> 
 

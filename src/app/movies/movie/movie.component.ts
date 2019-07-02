@@ -36,9 +36,7 @@ export class MovieComponent implements OnInit {
         console.log(this.similarMovies); })
   
     })
-    // openSimilarMovies(event){
-
-    // }
+    
 
   }
 }
