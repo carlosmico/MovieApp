@@ -5,6 +5,7 @@ import {API_KEY} from '../config/moviesApi'
 
 //API URLs
 const URLS = {
+  genres : 'https://api.themoviedb.org/3/genre/movie/list?api_key=',
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
   topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
@@ -18,6 +19,14 @@ const URLS = {
 export class MoviesService {
   
   constructor(private http: HttpClient) { }
+
+  getGenres():any{
+    return this.http.get(`${URLS.genres}${API_KEY}`);
+  }
+
+  getMoviesByGenre(page:number, genreId:number):any{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&with_genres=${genreId}`)
+  }
 
   //Método que nos devuelve un Observable con las películas más populares
   getPopularMovies(page:number):any{
