@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+@import '../general-movies.scss';
+
+.movie{
+    min-width: max-content;
+    min-height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+}

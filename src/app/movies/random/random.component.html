@@ -1,5 +1,21 @@
-<!-- <div class="leftSection">
-    <img src='https://image.tmdb.org/t/p/w500/page=${math.random()*993}' alt={{movie.title}}>
-  </div> -->
-
-  <img src='https://image.tmdb.org/t/p/w500/{{random?.poster_path}}' alt={{random?.title}}>
+<div class="general-movies">
+    <h1>¿has visto esta película?</h1>
+<div>
+  <div class="movies">
+      <div class="movie" >
+        <div class="leftSection">
+          <img src='https://image.tmdb.org/t/p/w500/{{randomMovie.poster_path}}' alt={{randomMovie.title}}>
+        </div>
+  
+        <div class="rightSection">
+          <h2 class="title">{{randomMovie.title}}</h2>
+  
+          <p class="date">{{randomMovie.release_date}}</p>
+  
+          <!-- <p class="description">{{randomMovie.overview}}</p> -->
+  
+          <!-- <p class="moreInfo">More Info</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
