@@ -49,9 +49,9 @@
     </div>
 
     <div class="similarMovies">
-      <div class="similarMovie" *ngFor="let similarMovie of similarMovies" >
-        <body class="similarMovieImageContainer"  (mouseover) = "showItem()" background="https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}">
-          <div class="moreInfo" *ngIf="show=true">
+      <div ng-app class="similarMovie" *ngFor="let similarMovie of similarMovies" >
+        <body class="similarMovieImageContainer"  ng-mouseover = "showItem()" background="https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}">
+          <div class="moreInfo" *ngIf="show===true">
             <span>+ Info</span>
           </div>
         </body>
