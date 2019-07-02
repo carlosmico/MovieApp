@@ -14,7 +14,7 @@ export class MovieComponent implements OnInit {
   videos: Object[];
   similarMovies: Object[];
   showInfo: boolean = false;
-  showModal: boolean = false;
+  showInfoSimilar: boolean = false;
   
 
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
@@ -42,25 +42,21 @@ export class MovieComponent implements OnInit {
         
       })
     }
-    
-  showMoreInfo (): void{
-    this.showInfo = true;
-    console.log(this.showInfo)
+
+  showMoreInfo (similarMovie): void{
+    similarMovie['showInfo']=true
   }
 
-  hideMoreInfo() : void{
-    this.showInfo = false;
-    console.log(this.showInfo)
+  hideMoreInfo(similarMovie) : void{
+    similarMovie['showInfo']=false
   }
 
-  showModalWindow (): void{
-    this.showModal = true;
-    console.log(this.showModal)
+  showTheInfo (): void{
+    this.showInfoSimilar = true;
   }
 
-  hideModalWindow() : void{
-    this.showModal = false;
-    console.log(this.showModal)
+  hideTheInfo() : void{
+    this.showInfoSimilar = false;
   }
 
 
