@@ -8,6 +8,7 @@ import {PopularMoviesComponent} from './movies/popular-movies/popular-movies.com
 import {MovieComponent} from './movies/movie/movie.component'
 import {TopRateComponent} from './movies/top-rate/top-rate.component'
 import { UpcomingMoviesComponent } from './movies/upcoming-movies/upcoming-movies.component';
+import { Notfound404Component} from './notfound404/notfound404.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'popular', component: PopularMoviesComponent},
   {path: 'topRated', component: TopRateComponent},
   {path: 'upcoming', component: UpcomingMoviesComponent},
-  {path: 'movie/:id', component: MovieComponent}
+  {path: 'movie/:id', component: MovieComponent},
+  {path: '**', component: Notfound404Component},
 ];
 
 @NgModule({
