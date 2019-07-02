@@ -13,6 +13,7 @@ import { UpcomingMoviesComponent } from './movies/upcoming-movies/upcoming-movie
 import { TopRateComponent } from './movies/top-rate/top-rate.component';
 import { LatestmoviesComponent } from './movies/latestmovies/latestmovies.component';
 import { MainComponent } from './main/main.component';
+import { RandomComponent } from './movies/random/random.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MainComponent } from './main/main.component';
     UpcomingMoviesComponent,
     TopRateComponent,
     LatestmoviesComponent,
-    MainComponent
+    MainComponent,
+    RandomComponent
   ],
   imports: [
     BrowserModule,

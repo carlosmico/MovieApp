@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import {API_KEY} from '../config/moviesApi' 
+import { API_KEY } from '../config/moviesApi'
 
 //API URLs
 const URLS = {
@@ -16,38 +16,42 @@ const URLS = {
 })
 
 export class MoviesService {
-  
+
   constructor(private http: HttpClient) { }
 
   //Método que nos devuelve un Observable con las películas más populares
-  getPopularMovies(page:number):any{
+  getPopularMovies(page: number): any {
     return this.http.get(`${URLS.popularMovies}${API_KEY}&page=${page}`);
   }
-  
-  getUpcomingMovies(page:number):Observable<any>{
+
+  getUpcomingMovies(page: number): Observable<any> {
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}&page=${page}`);
   }
 
-  getTopRatedMovies(page:number):Observable<any>{
+  getTopRatedMovies(page: number): Observable<any> {
     return this.http.get(`${URLS.topRatedMovies}${API_KEY}&page=${page}`);
   }
 
-  getMovieById(id):any{
+  getMovieById(id): any {
     console.log(id)
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`);
   }
 
-  getVideosById(id):any{
+  getVideosById(id): any {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
   }
 
-  getSimilarFilms(id):any{
+  getSimilarFilms(id): any {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1
     `);
   }
 
-  getlatestMovies():Observable<any>{
+  getlatestMovies(): Observable<any> {
     return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
-  
+
+  getRandomMovie(): Observable<any> {
+    return this.http.get(`${URLS.popularMovies}${API_KEY}`)
+  }
+
 }
