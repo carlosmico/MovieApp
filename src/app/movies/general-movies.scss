@@ -12,6 +12,23 @@
     text-align: center;
   }
 
+  .filters{
+    width: 80vw;
+    display: flex;
+    
+    button{
+      background-color: #222831;
+      color: #00adb5;
+      padding: 0.5em;
+      width: 150px;
+    }
+
+    .dropdown-menu{
+      top: 45px !important;
+      transform: unset !important;
+    }
+  }
+
   .navigation{
     display: flex;
     align-items: center;
@@ -68,7 +85,7 @@
         position: relative;
 
         .title {
-          font-size: 1.7em;
+          font-size: 1.2em;
           text-align: center;
         }
 

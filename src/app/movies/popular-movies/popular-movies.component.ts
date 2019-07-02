@@ -10,21 +10,30 @@ import {MoviesService} from "../movies.service"
 export class PopularMoviesComponent implements OnInit {
   actualPage:number = 1
   maxPage:number
+  genres:Object[]
   movies: Object[]
+  filter:boolean = false
+  filterGenreId:number
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
+    this.loadGenres();
     this.loadMovies();
   }
 
   loadMovies():void{
-    this.moviesService.getPopularMovies(this.actualPage).subscribe(value=> {
-      this.movies = value.results;
-      this.maxPage = value.total_pages;
-
-      console.log(this.maxPage)
-    }, err=>console.log(err));
+    if(this.filter){
+      this.moviesService.getMoviesByGenre(this.actualPage, this.filterGenreId).subscribe(value => {
+        this.movies = value.results;
+        this.maxPage = value.total_pages;
+      }, console.log);
+    }else{
+      this.moviesService.getPopularMovies(this.actualPage).subscribe(value=> {
+        this.movies = value.results;
+        this.maxPage = value.total_pages;
+      }, console.log);
+    }
   }
 
   firstPage():void{
@@ -49,6 +58,27 @@ export class PopularMoviesComponent implements OnInit {
   lastPage():void{
     this.actualPage = this.maxPage;
     this.loadMovies()
+  }
+
+  //Genres
+
+  loadGenres():void{
+    this.moviesService.getGenres().subscribe(value => {
+      this.genres = value.genres;
+      console.log(this.genres)
+    }, err => {
+      console.log(err)
+    })
+  }
+
+  filterByGenre(event, genre):void{
+    console.log(event.target)
+
+    //Seteamos el filter a true para que la función loadMovies sepa como tiene que buscar
+    this.filter = true
+    this.filterGenreId = genre.id;
+
+    this.loadMovies();
   }
 
 }

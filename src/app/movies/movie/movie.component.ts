@@ -13,6 +13,7 @@ export class MovieComponent implements OnInit {
   genres: Object[];
   videos: Object[];
   similarMovies: Object[];
+  show: boolean = false;
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
@@ -34,9 +35,14 @@ export class MovieComponent implements OnInit {
       this.moviesServices.getSimilarMovies(params.id).subscribe(value =>{ 
        this.similarMovies = value.results; 
         console.log(this.similarMovies); })
-  
-    })
-    
-
+        
+        
+      })
+      
+      
+      
+    }
+  showItem (): void{
+    this.show = true;
   }
-}
+  }

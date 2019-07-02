@@ -5,9 +5,11 @@ import {API_KEY} from '../config/moviesApi'
 
 //API URLs
 const URLS = {
+  genres : 'https://api.themoviedb.org/3/genre/movie/list?api_key=',
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
-  topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key='
+  topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
+  latestMovies: 'https://api.themoviedb.org/3/movie/latest?api_key=',
 }
 
 @Injectable({
@@ -18,6 +20,14 @@ export class MoviesService {
   
   constructor(private http: HttpClient) { }
 
+  getGenres():any{
+    return this.http.get(`${URLS.genres}${API_KEY}`);
+  }
+
+  getMoviesByGenre(page:number, genreId:number):any{
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}&with_genres=${genreId}`)
+  }
+
   //Método que nos devuelve un Observable con las películas más populares
   getPopularMovies(page:number):any{
     return this.http.get(`${URLS.popularMovies}${API_KEY}&page=${page}`);
@@ -27,8 +37,8 @@ export class MoviesService {
     return this.http.get(`${URLS.upcomingMovies}${API_KEY}&page=${page}`);
   }
 
-  getTopRatedMovies():Observable<any>{
-    return this.http.get(`${URLS.topRatedMovies}${API_KEY}`);
+  getTopRatedMovies(page:number):Observable<any>{
+    return this.http.get(`${URLS.topRatedMovies}${API_KEY}&page=${page}`);
   }
 
   getMovieById(id):any{
@@ -44,9 +54,11 @@ export class MoviesService {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1
     `);
   }
-  openSimilarMovies(event){
-    
-  }
   
+  
+
+  getlatestMovies():Observable<any>{
+    return this.http.get(`${URLS.latestMovies}${API_KEY}`);
+  }
   
 }
