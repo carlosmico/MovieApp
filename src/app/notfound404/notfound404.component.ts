@@ -13,6 +13,6 @@ export class Notfound404Component implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate([''])
-    }, 3000);
+    }, 6500);
   }
 };
