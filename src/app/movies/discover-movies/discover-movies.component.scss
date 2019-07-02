@@ -1,0 +1,76 @@
+@import '../../../styles.scss';
+@import '../general-movies.scss';
+
+.filters {
+    background-color: whitesmoke;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90vw;
+
+  &>p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  button {
+    background-color: $color-principal-oscuro;
+    color: $color-acento;
+    padding: 0.5em;
+    width: 150px;
+    min-height: 50px;
+    border-color: $color-acento;
+  }
+
+  .dropdown-menu {
+    top: 40px !important;
+    width: 250px;
+    transform: unset !important;
+    background-color: $color-principal-oscuro;
+  }
+
+  .genresFilter {
+    display: flex;
+    flex-direction: column;
+
+    .dropdown-toggle {
+      width: 250px;
+      min-height: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      padding: 0.2em;
+      border: 2px solid #00adb5;
+      background-color: white;
+
+      .genre {
+        background-color: $color-principal-oscuro;
+        color: $color-letra;
+        padding: 0.5em;
+        border-radius: 10px;
+        margin: 0.1em;
+
+        &>i {
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    top: 80px !important;
+    width: 250px;
+    height: 400px;
+    overflow-y: scroll;
+}
+}
+
+// @media(max-width: 500px){
+//   .filters{
+//     flex-direction: column;
+//   }
+// }

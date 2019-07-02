@@ -1,0 +1,72 @@
+<div class="general-movies">
+  <h1>Discover</h1>
+
+  <div class="filters">
+    <div class="dropdown yearsFilter">
+      <p>Year</p>
+
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{filterYear}}
+      </button>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button" *ngFor='let year of years' (click)="filterByYear(year)">{{year}}</button>
+      </div>
+    </div>
+
+    <div class="dropdown genresFilter">
+      <p>Genre</p>
+
+      <div class="btn btn-secondary dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <div class="genre" *ngFor="let filterGenre of filterGenresArray">
+          <span>{{filterGenre.name}}</span>
+          <i class="fas fa-times" (click)="removeGenre($event, filterGenre)"></i>
+        </div>
+
+      </div>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2" #genreList>
+        <button class="dropdown-item" type="button" *ngFor='let genre of genres'
+          (click)="filterByGenre(genre)">{{genre.name}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
+  </div>
+
+  <div class="movies">
+    <p class='moviesNotFound' *ngIf='movies.length === 0'>No se han encontrado películas.</p>
+    
+    <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor='let movie of movies'>
+      <div class="leftSection">
+        <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+      </div>
+
+      <div class="rightSection">
+        <h2 class="title">{{movie.title}}</h2>
+
+        <p class="date">{{movie.release_date}}</p>
+
+        <p class="description">{{movie.overview}}</p>
+
+        <p class="moreInfo">More Info</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <i (click)="firstPage()">1</i>
+    <i class="fas fa-arrow-left" (click)="previousPage()"></i>
+    <span class="actualPage">{{actualPage}}</span>
+    <i class="fas fa-arrow-right" (click)="nextPage()"></i>
+    <i (click)="lastPage()">{{maxPage}}</i>
+  </div>
+</div>
