@@ -8,7 +8,8 @@ import {PopularMoviesComponent} from './movies/popular-movies/popular-movies.com
 import {MovieComponent} from './movies/movie/movie.component'
 import {TopRateComponent} from './movies/top-rate/top-rate.component'
 import { UpcomingMoviesComponent } from './movies/upcoming-movies/upcoming-movies.component';
-import {RandomComponent} from './movies/random/random.component'
+import {RandomComponent} from './movies/random/random.component';
+import {ListsComponent} from './movies/lists/lists.component';
 import { Notfound404Component} from './notfound404/notfound404.component';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'upcoming', component: UpcomingMoviesComponent},
   {path: 'movie/:id', component: MovieComponent},
   {path: 'random', component: RandomComponent},
+  {path: 'list', component: ListsComponent},
   {path: '**', component: Notfound404Component},
 ];
 
