@@ -1,7 +1,58 @@
 <div class="home">
+  <div class="content">
+    <h1 class="title">Welcome Movie Lovers <i class="fas fa-heart"></i></h1>
+
+    <p class="top5"> Our top 5</p>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor='let movie of movies; let i = index' [ngClass]="{'active': i==0}">
+          <img src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" class="d-block w-100"
+            alt="{{movie.title}}">
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{movie.title}}</h5>
+            <p>{{movie.description}}</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <div class="arrows">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </div>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <div class="arrows">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="carousel-item" *ngFor='let movie of topMovies'>
+      <img src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{movie.title}}</h5>
+        <p>{{movie.description}}</p>
+      </div>
+    </div>
+
+    
+    <!-- <div class="sections">
     <div class="content">
-      <div class="title">¡Welcome Movie Lovers!</div>
-      <div class="sections">
+      <div class="title">Welcome Movie Lovers!</div>
+      
+      <!-- <div class="sections">
         <button class="Uncoming">
           <div class="textsection">
             <h3>Look up for <br> the upcoming <br>films</h3>
@@ -21,8 +72,8 @@
           <div class="textsection">
             <h3>You want it?<br> You got it!</h3>
           </div>
-        </button>
-      </div>
-    </div>
-  
+        </button> -->
+    <!-- </div> -->
   </div>
+
+</div>
