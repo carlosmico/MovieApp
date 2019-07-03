@@ -2,7 +2,6 @@
 
 body{
     background-size: cover;
-    width: 99.5vw;
 }
 
 .backgroundColor{
@@ -11,7 +10,6 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 4em 15%;
-    width: 99.5vw;
     min-height: 90%;
 }
 
@@ -112,14 +110,12 @@ p{
 }
 
 .moreInfo{
-    width: 99.5vw;
     position: relative;
     background-color: $color-fondo;
     padding-top: 1.5em;
     
     & .similarMoviesByGenre {
-        width: 99.5vw;
-        display: flex-inline;
+            display: flex-inline;
         
         & .titleContainerSimilarMoviesByGenre {
             text-align: center;
