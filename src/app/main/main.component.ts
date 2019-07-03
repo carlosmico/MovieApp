@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   }
 
   loadTopMovies():any{
-    this.moviesService.getTopRatedMovies(1).subscribe(value => {
+    this.moviesService.getPopularMovies(1).subscribe(value => {
       for (let i = 0; i < 5; i++) {
         this.movies.push(value.results[i]);
       }
