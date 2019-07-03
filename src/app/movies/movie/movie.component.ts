@@ -15,6 +15,7 @@ export class MovieComponent implements OnInit {
   similarMovies: Object[];
   showInfo: boolean = false;
   showInfoSimilar: boolean = false;
+  showSMIC: boolean = true;//Similar Image Movie Container
   
 
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
@@ -51,13 +52,16 @@ export class MovieComponent implements OnInit {
     similarMovie['showInfo']=false
   }
 
-  showTheInfo (): void{
-    this.showInfoSimilar = true;
+  showTheInfo (similarMovie): void{
+    similarMovie['showInfoSimilar'] = true;
+    similarMovie['showSMIC'] = false;
+    console.log(similarMovie['showSMIC'])
   }
 
-  hideTheInfo() : void{
-    this.showInfoSimilar = false;
+  hideTheInfo(similarMovie) : void{
+    similarMovie['showInfoSimilar'] = false;
+    similarMovie['showSMIC'] = true;
+    console.log(similarMovie['showSMIC'])
   }
-
 
   }

@@ -19,6 +19,7 @@ body{
     height: 35em;
     width: 25em;
     margin-right: 4em;
+    
 }
 
 
@@ -75,7 +76,7 @@ body{
 
     
     & button{
-        height: 0.5em;
+        height: 0.7em;
         width: 1em;
         all:unset;
         border-radius: 50%;
@@ -118,11 +119,13 @@ p{
     
     & .similarMoviesByGenre {
         width: 99.5vw;
-
-        & .titleSimilarMoviesByGenre {
+        display: flex-inline;
+        overflow-y: unset;
+        
+        & .titleContainerSimilarMoviesByGenre {
             text-align: center;
-        
-        
+            
+            
             & .similarMoviesTitle {
                 margin-left: 1em;
                 position: sticky;
@@ -131,19 +134,34 @@ p{
                 margin-bottom: 1.5em;
             }
         }
-
+        
+        
         & .similarMovies{
             display: flex;
             overflow-x: scroll;
             
+            padding-bottom: 1em;
+            
 
             & .similarMovie{
-                width: 20em;
-                margin: 0 0.5em ;
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 14em;
+                margin: 0 0.5em 0.5em;
                 box-shadow: 0px 0px 10px 0px rgba(173, 173, 173, 1);
+                border: solid rgba(173, 173, 173, 1) 1px;
                 cursor: pointer;
-
+                
+                & .close{
+                    position: absolute;
+                    top: 6px;
+                    right: 6px;
+                }
                 & .similarMovieImageContainer{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                     width: 10em;
                     height: 14em;
 
@@ -160,9 +178,35 @@ p{
                         }
                     }
 
-                    & .similarMovieImage{
-                        width: 10em;
-                        height: 14em;
+                }
+                
+                & .infoSimilarMovie{
+                    width: 20em;
+                    padding: 0 1em;
+                    overflow-y: scroll;
+                    
+                    & .contentinfoSimilarMovie{
+                        width: 90%;
+                        position: absolute;
+                        top: 1.5em;
+                        text-align: justify;
+                        width: 100%;
+                        
+                    }
+                    & .similarMovieText{
+                        right: 0;
+                        width: 20em;
+                        overflow-y: hidden;
+
+                        & .similarMovieTitle{
+                            width: 90%;
+                            overflow-wrap: normal;
+                        }
+                        
+                        & .similarMovieDescription{
+                            width: 90%;
+                            word-break: break-all; 
+                        }
                     }
                 }
 
@@ -171,10 +215,6 @@ p{
     }
 }
 
-.infoSimilarMovie{
-    height: 100vh;
-    width: 100vw;
-}
 @media (max-width: 1025px) { 
     .backgroundColor{
         display: flex;
