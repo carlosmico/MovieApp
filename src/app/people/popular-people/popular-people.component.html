@@ -1,0 +1,25 @@
+<div class="popular-people">
+
+  <h1>Popular People</h1>
+
+  <div class="people">
+
+    <div class="person" [routerLink]='["/people",person.id]' *ngFor='let person of people'>
+
+      <div class="imageSection">
+
+        <img src="https://image.tmdb.org/t/p/w235_and_h235_face{{person.profile_path}}" alt={{person.name}}>
+      
+    </div>
+
+      <div class="infoSection">
+
+        <h2 class="name">{{person.name}}</h2>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
