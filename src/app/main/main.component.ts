@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies/movies.service'
+import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,7 @@ import { MoviesService } from '../movies/movies.service'
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  topMovies: Object[]
+  movies: Object[] = []
 
   constructor(private moviesService: MoviesService) { }
 
@@ -17,7 +18,10 @@ export class MainComponent implements OnInit {
 
   loadTopMovies():any{
     this.moviesService.getTopRatedMovies(1).subscribe(value => {
-      this.topMovies = value.results;
+      for (let i = 0; i < 5; i++) {
+        this.movies.push(value.results[i]);
+      }
+      console.log(this.movies)
     }, err => console.log(err))
   }
 
