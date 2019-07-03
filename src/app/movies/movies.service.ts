@@ -5,6 +5,7 @@ import { API_KEY } from '../config/moviesApi'
 
 //API URLs
 const URLS = {
+  searchMovies: 'https://api.themoviedb.org/3/search/movie?api_key=',
   genres : 'https://api.themoviedb.org/3/genre/movie/list?api_key=',
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
@@ -19,6 +20,10 @@ const URLS = {
 export class MoviesService {
 
   constructor(private http: HttpClient) { }
+
+  searchMovies(textIntroduced:string):any{
+    return this.http.get(`${URLS.searchMovies}${API_KEY}&query=${textIntroduced}`);
+  }
 
   getGenres():any{
     return this.http.get(`${URLS.genres}${API_KEY}`);

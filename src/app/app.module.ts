@@ -17,6 +17,8 @@ import { RandomComponent } from './movies/random/random.component';
 import { DiscoverMoviesComponent } from './movies/discover-movies/discover-movies.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
 import { ListsComponent } from './movies/lists/lists.component';
+import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ListsComponent } from './movies/lists/lists.component';
     RandomComponent,
     DiscoverMoviesComponent,
     Notfound404Component,
-    ListsComponent
+    ListsComponent,
+    BuyTicketsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

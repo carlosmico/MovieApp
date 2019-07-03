@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+.buyTickets{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://wallpapercave.com/wp/wp4016023.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 1em;
+    margin-top: 5em;
+    margin-bottom: 2em;
+
+    a{
+        color: white;
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-decoration: none;
+    }
+}
