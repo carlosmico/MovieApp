@@ -10,7 +10,7 @@
     background-color: $color-principal-oscuro !important;
     padding: 1em;
     display: flex;
-    width: 100vw;
+    width: 100%;
 
     //Logo y título
     &>a {
@@ -28,8 +28,6 @@
         font-size: 1.5em;
       }
     }
-
-
 
     //Links menú
     .nav-link {
@@ -56,6 +54,12 @@
       padding: 1em;
       flex-direction: row;
       justify-content: space-evenly;
+    }
+
+    @media(max-width: 320px){
+      .navbar-nav{
+        flex-direction: column;
+      }
     }
   }
 
