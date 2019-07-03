@@ -1,2 +1,39 @@
 @import '../../styles.scss';
 
+.div404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5em;
+    background-image: url("https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+
+    h3, h4, h5 {
+        font-weight: 400;
+    }
+
+    h3 {
+        color: $color-acento;  
+    }
+
+    h4 {
+        color: $color-letra-gris;
+    }
+
+    img {
+        border: 0.6em solid black;
+        margin: 0.8em;
+    }
+
+    h5 {
+        color: $color-fondo;
+    }
+
+}
+    
+@media(max-width: 415px) {
+        img {
+            width: 200px;
+            height: 150px;
+        }
+}
