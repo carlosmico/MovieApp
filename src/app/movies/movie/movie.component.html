@@ -41,14 +41,14 @@
 </body>
 
 
-<div class="moreInfo">
+
   
   <div class="similarMoviesByGenre">
     <div class="titleContainerSimilarMoviesByGenre">
       <h3 class="similarMoviesTitle">Similar Movies by Genre</h3>
     </div>
 
-    <div class="similarMovies" *ngIf = "showSMIC">
+    <div class="similarMovies">
       <div  class="similarMovie" *ngFor="let similarMovie of similarMovies"  >
         <body class="similarMovieImageContainer"   (mouseover) = "showMoreInfo(similarMovie) "  background="https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}">
           <div class="moreInfo" *ngIf="similarMovie.showInfo"  (mouseout) = "hideMoreInfo(similarMovie)" (click) = "showTheInfo(similarMovie)">
@@ -64,15 +64,32 @@
               <h2 class="similarMovieTitle">{{similarMovie.title}}</h2>
               <p class="similarMovieDate">{{similarMovie.release_date}}</p>
               <p class="similarMovieDescription">{{similarMovie.overview}}</p>
-              <span [routerLink]='["/movie",movie.id]' class="goToTheMovie">Go to the movie</span>
+              <button [routerLink]='["/movie",movie.id]' class="goToTheMovie">Go to the movie</button>
               
             </div>
           </div>
           </div>
     </div>
     </div>
-
-    
   </div>
-</div> 
+
+  <div class="cast">
+    <div class="titleCastContainer">
+      <h3 class="castTitle">Casting</h3>
+    </div>
+    
+    <div class="casting" >
+      <div  class="artist" *ngFor="let artist of cast"  >
+        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"   background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
+          <span class="artistName">{{artist.name}}</span>
+          <div class="character" *ngIf = "showCharacter">
+            <i class="fas fa-times closeCharacter" (click) = "hideTheCharacter(artist)"></i>
+            <span>{{artist.character}}</span>
+          </div>
+        </body>
+  </div>
+  </div>
+  </div>
+
+
 
