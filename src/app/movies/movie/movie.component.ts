@@ -18,10 +18,7 @@ export class MovieComponent implements OnInit {
   crew: Object[];
 
 
-  showInfo: boolean = false;
-  showInfoSimilar: boolean = false;
-  showCharacter: boolean = true;  
-
+ 
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
@@ -74,11 +71,10 @@ export class MovieComponent implements OnInit {
 
   showTheCharacter(artist) : void{
     artist['showCharacter'] = true;
-    console.log(this.showCharacter)
   }
 
-  hiddeTheCharacter(artist) : void{
+  hideTheCharacter(artist) : void{
     artist['showCharacter'] = false;
   }
 
-  }
+}
