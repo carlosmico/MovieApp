@@ -120,7 +120,6 @@ p{
     & .similarMoviesByGenre {
         width: 99.5vw;
         display: flex-inline;
-        overflow-y: unset;
         
         & .titleContainerSimilarMoviesByGenre {
             text-align: center;
@@ -139,7 +138,6 @@ p{
         & .similarMovies{
             display: flex;
             overflow-x: scroll;
-            
             padding-bottom: 1em;
             
 

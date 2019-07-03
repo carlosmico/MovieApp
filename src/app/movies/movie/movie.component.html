@@ -64,6 +64,7 @@
               <h2 class="similarMovieTitle">{{similarMovie.title}}</h2>
               <p class="similarMovieDate">{{similarMovie.release_date}}</p>
               <p class="similarMovieDescription">{{similarMovie.overview}}</p>
+              <span [routerLink]='["/movie",movie.id]' class="goToTheMovie">Go to the movie</span>
               
             </div>
           </div>
