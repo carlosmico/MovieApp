@@ -13,15 +13,17 @@ export class MovieComponent implements OnInit {
   genres: Object[];
   videos: Object[];
   similarMovies: Object[];
-  showInfo: boolean = false;
-  showInfoSimilar: boolean = false;
-  
+  castNcrew: Object;
+  cast: Object[];
+  crew: Object[];
 
+
+ 
   constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
 
   ngOnInit() {
+
     this.route.params.subscribe(params => {
-      
       this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
       this.movie = value; 
       this.genres = value.genres;
@@ -38,9 +40,16 @@ export class MovieComponent implements OnInit {
       this.moviesServices.getSimilarMovies(params.id).subscribe(value =>{ 
        this.similarMovies = value.results; 
         console.log(this.similarMovies); })
-        
-        
       })
+    
+    this.route.params.subscribe(params => {
+      this.moviesServices.getCastnCrew(params.id).subscribe(value =>{
+        this.castNcrew = value;
+        this.cast = value.cast;
+        this.crew = value.crew;
+        console.log (this.cast)
+      })
+    })
     }
 
   showMoreInfo (similarMovie): void{
@@ -51,13 +60,21 @@ export class MovieComponent implements OnInit {
     similarMovie['showInfo']=false
   }
 
-  showTheInfo (): void{
-    this.showInfoSimilar = true;
+  showTheInfo (similarMovie): void{
+    similarMovie['showInfoSimilar'] = true;
+    
   }
 
-  hideTheInfo() : void{
-    this.showInfoSimilar = false;
+  hideTheInfo(similarMovie) : void{
+    similarMovie['showInfoSimilar'] = false;
   }
 
-
+  showTheCharacter(artist) : void{
+    artist['showCharacter'] = true;
   }
+
+  hideTheCharacter(artist) : void{
+    artist['showCharacter'] = false;
+  }
+
+}
