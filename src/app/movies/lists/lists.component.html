@@ -1,15 +1,11 @@
 <div class="lists">
-    
-<div class="image_thriller" >
-    <img src="https://image.tmdb.org/t/p/w500/{{image_thriller}}" alt="{{trhillerList?.title}}">
-    <p>thriller List</p>
 
+    <div class="list" (click)='selectList()' [routerLink]='["/list",list?.id]' *ngFor='let list of lists'
+        id='{{list?.id}}'>
+        <img src='https://image.tmdb.org/t/p/w500/{{list?.poster_path}}' alt={{list?.title}}>
+        <div class="info">
+           <div> {{list?.name}}</div>
+           <div> Rating {{list?.average_rating}}</div>
+        </div>
+    </div>
 </div>
-<!-- <div class="movie" *ngFor='let movie of laughList'></div>
-<div class="movie" *ngFor='let movie of awardList'></div> -->
-</div>
-<!-- <div class="movie" *ngFor='let movie of fictionList'>{{movie.title}}</div>
-<br>
-<div class="movie" *ngFor='let movie of twistList'>{{movie.title}}</div>
-<br>
-<div class="movie" *ngFor='let movie of animeList'>{{movie.title}}</div> -->

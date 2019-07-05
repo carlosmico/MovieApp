@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
+import { API_KEY } from '../../config/moviesApi.js';
 
 @Component({
   selector: 'app-lists',
@@ -7,45 +8,39 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./lists.component.scss']
 })
 export class ListsComponent implements OnInit {
-  thrillerList: object[];
-  laughList: object[];
-  awardList: object[];
-  fictionList: object[];
-  twistList: object[];
-  animeList: object[];
-  image_thriller: object;
-  
+  list_ID: number[] = [43, 3682, 28, 3945, 1131, 3321];
+  lists: object[] = [];
+  one_List: object[] = [];
+  lists_random: number;
+
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.moviesService.getList(43).subscribe(value => {
-      console.log(value.results[0].poster_path);
-      this.thrillerList = value.results;
-      this.image_thriller = value.results[0].poster_path;
-    })
+    this.loadLists();
+  }
 
-    this.moviesService.getList(3682).subscribe(value => {
-      // console.log(value.results);
-      this.laughList = value.results;
-    })
+  loadLists(): void {
+    for (let i = 0; i < this.list_ID.length; i++) {
+      let id = this.list_ID[i]
+      this.moviesService.getList(id).subscribe(value => {
+        this.lists.push(value);
+        this.lists_random = value.lists;
+        // this.lists_random = Math.floor(Math.random() * this.lists.length);
 
-    this.moviesService.getList(28).subscribe(value => {
-      // console.log(value.results);
-      this.awardList = value.results;
-    })
+        console.log(this.lists);
 
-    this.moviesService.getList(3945).subscribe(value => {
-      // console.log(value.results);
-      this.fictionList = value.results;
-    })
+      })
 
-    this.moviesService.getList(1131).subscribe(value => {
-      // console.log(value.results);
-      this.twistList = value.results;
-    })
+    }
+  }
 
-    this.moviesService.getList(3321).subscribe(value => {
-      // console.log(value.results);
-      this.animeList = value.results;
-    })
-}}
+  // this.max_pages = value.total_pages;
+  // this.page_random = Math.floor(Math.random() * this.max_pages);
+  // list_ID: number[] = [43, 3682, 28, 3945, 1131, 3321];
+
+
+  selectList(id:number):void{
+   
+  }
+
+}

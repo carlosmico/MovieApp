@@ -19,6 +19,7 @@ import { Notfound404Component } from './notfound404/notfound404.component';
 import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     Notfound404Component,
     ListsComponent,
     BuyTicketsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ListDetailsComponent
   ],
   imports: [
     BrowserModule,

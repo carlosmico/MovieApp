@@ -77,18 +77,18 @@ export class MoviesService {
   }
 
   getList(id): Observable<any>{
-    if (id === 43) {
-      return this.http.get(`https://api.themoviedb.org/4/list/43?page=1&api_key=${API_KEY}`)}
-    else if (id === 3682){
-      return this.http.get(`https://api.themoviedb.org/4/list/3682?page=1&api_key=${API_KEY}`)}
-    else if (id === 28){
-      return this.http.get(`https://api.themoviedb.org/4/list/28?page=1&api_key=${API_KEY}`)}
-    else if (id === 3945) {
-      return this.http.get(`https://api.themoviedb.org/4/list/3945?page=1&api_key=${API_KEY}`)}
-    else if (id === 1131) {
-      return this.http.get(`https://api.themoviedb.org/4/list/1131?page=1&api_key=${API_KEY}`)}
-    else if (id === 3321) {
-      return this.http.get(`https://api.themoviedb.org/4/list/3321?page=1&api_key=${API_KEY}`)}
-  }
+    
+      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3682){
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3682?page=1&api_key=${API_KEY}`)}
+    // else if (id === 28){
+    //   return this.http.get(`https://api.themoviedb.org/4/list/28?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3945) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3945?page=1&api_key=${API_KEY}`)}
+    // else if (id === 1131) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/1131?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3321) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3321?page=1&api_key=${API_KEY}`)}
+  // }
 
 }

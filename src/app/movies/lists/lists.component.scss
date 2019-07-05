@@ -1,8 +1,13 @@
-
-
-.image_thriller{
+.list{
     display: flex;
+    margin: 0.5em;
+    align-items: center;
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
     img{
+        margin: 0.5em;
         width: 10%;
         height: 10%;
     }
