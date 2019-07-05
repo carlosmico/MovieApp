@@ -90,5 +90,22 @@
   </div>
   </div>
 
+  <div class="crew">
+    <div class="titleCrewContainer">
+      <h3 class="crewTitle">Crew</h3>
+    </div>
+    
+    <div class="theCrew" >
+      <div  class="member" *ngFor="let member of crew"  >
+        <body class="memberContainer" (mouseover) = "showTheJob(member)"   background="https://image.tmdb.org/t/p/w500/{{member.profile_path}}">
+          <span class="memberName">{{member.name}}</span>
+          <div class="job" *ngIf = "member.showJob" (mouseout) = "hideTheJob(member)">
+            <span>{{member.job}}</span>
+          </div>
+        </body>
+  </div>
+  </div>
+  </div>
+
 
 
