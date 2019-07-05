@@ -48,6 +48,7 @@ export class MovieComponent implements OnInit {
         this.cast = value.cast;
         this.crew = value.crew;
         console.log (this.cast)
+        console.log(this.crew)
       })
     })
     }
@@ -76,5 +77,14 @@ export class MovieComponent implements OnInit {
   hideTheCharacter(artist) : void{
     artist['showCharacter'] = false;
   }
+
+  showTheJob(member) : void{
+    member['showJob'] = true;
+  }
+
+  hideTheJob(member) : void{
+    member['showJob'] = false;
+  }
+
 
 }
