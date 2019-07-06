@@ -20,6 +20,7 @@ import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ListDetailsComponent } from './movies/lists/list-details/list-details.c
     ListsComponent,
     BuyTicketsComponent,
     SearchBarComponent,
-    ListDetailsComponent
+    ListDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

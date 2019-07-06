@@ -12,6 +12,7 @@ import {RandomComponent} from './movies/random/random.component';
 import {ListsComponent} from './movies/lists/lists.component';
 import { Notfound404Component} from './notfound404/notfound404.component';
 import {ListDetailsComponent} from './movies/lists/list-details/list-details.component'
+import {RegisterComponent} from './register/register.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'movie/:id', component: MovieComponent},
   {path: 'random', component: RandomComponent},
   {path: 'list/:id', component: ListDetailsComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '**', component: Notfound404Component},
 ];
 
