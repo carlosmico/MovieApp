@@ -12,7 +12,7 @@ import {RandomComponent} from './movies/random/random.component';
 import {ListsComponent} from './movies/lists/lists.component';
 import { Notfound404Component} from './notfound404/notfound404.component';
 import {ListDetailsComponent} from './movies/lists/list-details/list-details.component'
-import {RegisterComponent} from './register/register.component'
+import {RegisterComponent} from './users/register/register.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

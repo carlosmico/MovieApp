@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+require('./config/mongoose.js')
+const express = require( 'express' );
+const app = express();
+const userRouter=require('./routes/users');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+app.use( function ( req, res, next ) { // permite peticiones de otros dominios
+    res.header( "Access-Control-Allow-Origin", "*" );
+    res.header( "Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authenticate" );
+    res.header( "Access-Control-Allow-Methods", "GET, POST, PUT, PATCH" );
+    next();
+} );
+app.use( express.json() ) // parsea el body de la petición a JSON
 
-module.exports = router;
+app.use('/users',userRouter);
+
+app.listen( 4201, () => console.log( "servidor levantado en 4201" ) )

@@ -20,7 +20,7 @@ import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './users/register/register.component';
 
 @NgModule({
   declarations: [
