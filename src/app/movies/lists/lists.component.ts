@@ -8,7 +8,7 @@ import { API_KEY } from '../../config/moviesApi.js';
   styleUrls: ['./lists.component.scss']
 })
 export class ListsComponent implements OnInit {
-  list_ID: number[] = [43, 3682, 28, 3945, 1131, 3321];
+  list_ID: number[] = [43, 3945, 3321];
   lists: object[] = [];
   one_List: object[] = [];
   lists_random: number;
