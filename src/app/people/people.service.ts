@@ -15,8 +15,8 @@ export class PeopleService {
 
   constructor(private http: HttpClient) { }
     
-    getPopularPeople(): Observable <any> {
-      return this.http.get(`${URLS.popularPeople}${API_KEY}`);
+    getPopularPeople(page: number): Observable <any> {
+      return this.http.get(`${URLS.popularPeople}${API_KEY}&page=${page}`);
     }
    
 }
