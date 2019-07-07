@@ -16,6 +16,7 @@ import { MainComponent } from './main/main.component';
 import { RandomComponent } from './movies/random/random.component';
 import { DiscoverMoviesComponent } from './movies/discover-movies/discover-movies.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
+import { PopularPeopleComponent } from './people/popular-people/popular-people.component';
 import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -36,6 +37,7 @@ import { ListDetailsComponent } from './movies/lists/list-details/list-details.c
     RandomComponent,
     DiscoverMoviesComponent,
     Notfound404Component,
+    PopularPeopleComponent,
     ListsComponent,
     BuyTicketsComponent,
     SearchBarComponent,
