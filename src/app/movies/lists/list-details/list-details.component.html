@@ -10,17 +10,17 @@
     </div>
    -->
     <div class="movies">
-      <div class="movie" [routerLink]='["/list",list.id]' *ngFor='let list of listDetail'>
+      <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor='let movie of listDetail'>
         <div class="leftSection">
-          <img src='https://image.tmdb.org/t/p/w500/{{list.poster_path}}' alt={{list.title}}>
+          <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
         </div>
   
         <div class="rightSection">
-          <h2 class="title">{{list.title}}</h2>
+          <h2 class="title">{{movie.title}}</h2>
   
-          <p class="date">{{list.release_date}}</p>
+          <p class="date">{{movie.release_date}}</p>
   
-          <p class="description">{{list.overview}}</p>
+          <p class="description">{{movie.overview}}</p>
   
           <p class="moreInfo">More Info</p>
         </div>
