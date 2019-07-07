@@ -1,0 +1,11 @@
+<div class="lists">
+
+    <div class="list" (click)='selectList()' [routerLink]='["/list",list?.id]' *ngFor='let list of lists'
+        id='{{list?.id}}'>
+        <img src='https://image.tmdb.org/t/p/w500/{{list?.poster_path}}' alt={{list?.title}}>
+        <div class="info">
+           <div> {{list?.name}}</div>
+           <div> Rating {{list?.average_rating}}</div>
+        </div>
+    </div>
+</div>

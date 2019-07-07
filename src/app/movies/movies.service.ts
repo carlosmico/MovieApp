@@ -5,6 +5,7 @@ import { API_KEY } from '../config/moviesApi'
 
 //API URLs
 const URLS = {
+  searchMovies: 'https://api.themoviedb.org/3/search/movie?api_key=',
   genres : 'https://api.themoviedb.org/3/genre/movie/list?api_key=',
   popularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=',
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
@@ -19,6 +20,10 @@ const URLS = {
 export class MoviesService {
 
   constructor(private http: HttpClient) { }
+
+  searchMovies(textIntroduced:string):any{
+    return this.http.get(`${URLS.searchMovies}${API_KEY}&query=${textIntroduced}`);
+  }
 
   getGenres():any{
     return this.http.get(`${URLS.genres}${API_KEY}`);
@@ -59,13 +64,31 @@ export class MoviesService {
   }
 
   getSimilarMovies(id):any{
-    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1
-    `);
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`);
+  }
+
+  getCastnCrew(id): any{
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`);
+
   }
   
-  
-
   getlatestMovies(): Observable<any> {
     return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
+
+  getList(id): Observable<any>{
+    
+      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3682){
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3682?page=1&api_key=${API_KEY}`)}
+    // else if (id === 28){
+    //   return this.http.get(`https://api.themoviedb.org/4/list/28?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3945) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3945?page=1&api_key=${API_KEY}`)}
+    // else if (id === 1131) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/1131?page=1&api_key=${API_KEY}`)}
+    // else if (id === 3321) {
+    //   return this.http.get(`https://api.themoviedb.org/4/list/3321?page=1&api_key=${API_KEY}`)}
+  // }
+
 }
