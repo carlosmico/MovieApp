@@ -23,6 +23,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CertificationsComponent } from './certifications/certifications.component';
+import { PersonComponent } from './people/person/person.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CertificationsComponent } from './certifications/certifications.compone
     BuyTicketsComponent,
     SearchBarComponent,
     ListDetailsComponent,
-    CertificationsComponent
+    CertificationsComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

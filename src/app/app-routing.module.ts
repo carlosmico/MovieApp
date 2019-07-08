@@ -14,6 +14,7 @@ import {ListsComponent} from './movies/lists/lists.component';
 import { Notfound404Component} from './notfound404/notfound404.component';
 import {ListDetailsComponent} from './movies/lists/list-details/list-details.component'
 import {CertificationsComponent} from './certifications/certifications.component'
+import { PersonComponent } from './people/person/person.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'topRated', component: TopRateComponent},
   {path: 'upcoming', component: UpcomingMoviesComponent},
   {path: 'movie/:id', component: MovieComponent},
-  {path: 'people', component: PopularPeopleComponent},
+  {path: 'people', component: PopularPeopleComponent}, //añadir /:id
+  {path: 'person', component: PersonComponent },
   {path: 'random', component: RandomComponent},
   {path: 'list/:id', component: ListDetailsComponent},
   {path: '**', component: Notfound404Component},
