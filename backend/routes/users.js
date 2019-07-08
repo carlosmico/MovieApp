@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const UserModel=require('../models/User')
 router.post('/register', async (req, res) => {
   try {
       const user = await new UserModel({
