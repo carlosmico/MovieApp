@@ -21,7 +21,7 @@ export class PopularPeopleComponent implements OnInit {
 
   getPeople(): void {
     this.peopleService.getPopularPeople(this.actualPage).subscribe( result =>{
-      console.log(result);
+      // console.log(result);
       this.people = result.results;
       this.maxPage = result.total_pages;
     }, error =>{

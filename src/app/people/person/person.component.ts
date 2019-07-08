@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../people.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-person',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private personServices: PeopleService) { }
+  person: Object[];
 
   ngOnInit() {
+    this.getPerson();
   }
 
+  getPerson(): void {
+  this.route.params.subscribe(params => {
+    this.personServices.getPersonById(params.id).subscribe( result =>{
+      this.person = result; 
+      console.log(this.person);
+    }, error =>{
+      console.log(error);
+    })
+  })
+  }
 }

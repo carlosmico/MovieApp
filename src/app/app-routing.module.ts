@@ -22,8 +22,8 @@ const routes: Routes = [
   {path: 'topRated', component: TopRateComponent},
   {path: 'upcoming', component: UpcomingMoviesComponent},
   {path: 'movie/:id', component: MovieComponent},
-  {path: 'people', component: PopularPeopleComponent}, //añadir /:id
-  {path: 'person', component: PersonComponent },
+  {path: 'people', component: PopularPeopleComponent},
+  {path: 'person/:id', component: PersonComponent },
   {path: 'random', component: RandomComponent},
   {path: 'list/:id', component: ListDetailsComponent},
   {path: '**', component: Notfound404Component},
