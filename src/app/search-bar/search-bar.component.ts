@@ -25,8 +25,6 @@ export class SearchBarComponent implements OnInit {
       for (let i = 0; i < 10; i++) {
         this.searchResults.push(value.results[i]);
       }
-
-      console.log(this.searchResults)
     }, console.log);
   }
 
