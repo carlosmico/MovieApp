@@ -13,9 +13,11 @@ import {RandomComponent} from './movies/random/random.component';
 import {ListsComponent} from './movies/lists/lists.component';
 import { Notfound404Component} from './notfound404/notfound404.component';
 import {ListDetailsComponent} from './movies/lists/list-details/list-details.component'
+import {CertificationsComponent} from './certifications/certifications.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'certifications', component: CertificationsComponent},
   {path: 'discover', component: DiscoverMoviesComponent},
   {path: 'popular', component: PopularMoviesComponent},
   {path: 'topRated', component: TopRateComponent},

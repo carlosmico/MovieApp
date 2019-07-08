@@ -21,6 +21,8 @@ import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CertificationsComponent } from './certifications/certifications.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +43,14 @@ import { ListDetailsComponent } from './movies/lists/list-details/list-details.c
     ListsComponent,
     BuyTicketsComponent,
     SearchBarComponent,
-    ListDetailsComponent
+    ListDetailsComponent,
+    CertificationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

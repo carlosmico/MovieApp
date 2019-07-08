@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from "../movies.service"
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 @Component({
   selector: 'app-popular-movies',
   templateUrl: './popular-movies.component.html',
