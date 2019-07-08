@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const UserModel=require('../models/User')
+
+
 router.post('/register', async (req, res) => {
   try {
       const user = await new UserModel({
@@ -22,5 +24,10 @@ router.post('/register', async (req, res) => {
       console.log(error)
   }
 });
+
+// router.post('/favorite', async (req, res) =>{
+
+// })
+
 
 module.exports = router;
