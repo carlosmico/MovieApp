@@ -11,6 +11,7 @@ const URLS = {
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
   topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
   latestMovies: 'https://api.themoviedb.org/3/movie/latest?api_key=',
+  certifications: 'https://api.themoviedb.org/3/certification/movie/list?api_key=',
 }
 
 @Injectable({
@@ -23,6 +24,10 @@ export class MoviesService {
 
   searchMovies(textIntroduced:string):any{
     return this.http.get(`${URLS.searchMovies}${API_KEY}&query=${textIntroduced}`);
+  }
+
+  getCertifications():any{
+    return this.http.get(`${URLS.certifications}${API_KEY}`);
   }
 
   getGenres():any{

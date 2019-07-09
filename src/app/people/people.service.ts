@@ -19,4 +19,8 @@ export class PeopleService {
       return this.http.get(`${URLS.popularPeople}${API_KEY}&page=${page}`);
     }
    
+    getPersonById(id):any{
+      return this.http.get(`https://api.themoviedb.org/3/person/${id}?api_key=${API_KEY}`);
+    }
+
 }

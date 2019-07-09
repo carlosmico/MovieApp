@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,8 @@ import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+import { PersonComponent } from './people/person/person.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ListDetailsComponent } from './movies/lists/list-details/list-details.c
     ListsComponent,
     BuyTicketsComponent,
     SearchBarComponent,
-    ListDetailsComponent
+    ListDetailsComponent,
+    CertificationsComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
