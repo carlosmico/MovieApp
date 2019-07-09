@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../users.service';
 import {ActivatedRoute} from '@angular/router'
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {Observable} from 'rxjs'
 
 @Component({
   selector: 'app-register',
@@ -17,14 +18,20 @@ export class RegisterComponent implements OnInit {
     this.form = new FormGroup({
       username: new FormControl("", {validators: [Validators.minLength(8)]}),
       email: new FormControl("", {validators: [Validators.email, Validators.required]}),
-      password: new FormControl("", {validators: [Validators.minLength(8), Validators.required]} )
+      password: new FormControl("", {validators: [Validators.pattern(/^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{8,}$/), Validators.required]} )
     })
 
   }
   handleSubmit(){
-    //register es el método definido en el serivicio
-    //this.form.value tiene los datos que hemos metido en el formulario
-    console.log('aki llega')
-    this.usersServices.register(this.form.value).subscribe(res=>console.log(res))
+    if(this.form.status === "VALID"){
+      console.log(this.form)
+      //register es el método definido en el serivicio
+      //this.form.value tiene los datos que hemos metido en el formulario
+      this.usersServices.register(this.form.value).subscribe(res=>{
+        localStorage.setItem('authToken', res.token)
+        this.usersServices.isAuth = true;
+        console.log(res)},
+         error => console.log(error)) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
+    }
   }
 }

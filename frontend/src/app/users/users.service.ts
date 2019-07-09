@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   })
 
   export class UsersService {
+    isAuth: boolean;//variable para ver si el usuario está logeado y que podamos pintar el header de una forma u otra dependiendo de eso. Aunque en realidad la consulta debería de hacerse en el backedn, porque el token expira
 
     constructor(private http: HttpClient) { }
 
