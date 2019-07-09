@@ -25,6 +25,7 @@ import { ListDetailsComponent } from './movies/lists/list-details/list-details.c
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { PersonComponent } from './people/person/person.component';
+import { TrendingMoviesComponent } from './movies/trending-movies/trending-movies.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PersonComponent } from './people/person/person.component';
     SearchBarComponent,
     ListDetailsComponent,
     CertificationsComponent,
-    PersonComponent
+    PersonComponent,
+    TrendingMoviesComponent
   ],
   imports: [
     BrowserModule,

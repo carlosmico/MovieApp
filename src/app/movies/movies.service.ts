@@ -12,6 +12,8 @@ const URLS = {
   topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
   latestMovies: 'https://api.themoviedb.org/3/movie/latest?api_key=',
   certifications: 'https://api.themoviedb.org/3/certification/movie/list?api_key=',
+  trendingDay: 'https://api.themoviedb.org/3/trending/movie/day?api_key=',
+  trendingWeek: 'https://api.themoviedb.org/3/trending/movie/week?api_key=',
 }
 
 @Injectable({
@@ -28,6 +30,14 @@ export class MoviesService {
 
   getCertifications():any{
     return this.http.get(`${URLS.certifications}${API_KEY}`);
+  }
+  
+  getTrendingMoviesByDay():Observable<any>{
+    return this.http.get(`${URLS.trendingDay}${API_KEY}`);
+  }
+
+  getTrendingMoviesByWeek():Observable<any>{
+    return this.http.get(`${URLS.trendingWeek}${API_KEY}`);
   }
 
   getGenres():any{
