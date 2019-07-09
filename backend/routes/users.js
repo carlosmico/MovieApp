@@ -25,18 +25,10 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async(req, res) => {
-    try {
-        const user = await UserModel.findOne( {
-            email: req.body.email || req.body.username,
-            password: req.body.password
-        } )
-        if ( !user ) return res.status( 400 ).send( 'wrong crendentials' )
-        res.send( { info: 'Welcome back', user } )
-    } catch ( error ) {
-        res.status( 500 ).send( error )
-    }
-} );
+
+router.post('/logout', async(req, res) => {
+    
+})
 
 
 router.get('/info', isAuthenticated, (req, res)=>{

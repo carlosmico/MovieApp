@@ -80,7 +80,7 @@
     
     <div class="casting" >
       <div  class="artist" *ngFor="let artist of cast"  >
-        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"   background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
+        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"    background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
           <span class="artistName">{{artist.name}}</span>
           <div class="character" *ngIf = "artist.showCharacter" (mouseout) = "hideTheCharacter(artist)">
             <span>{{artist.character}}</span>
