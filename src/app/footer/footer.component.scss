@@ -8,9 +8,7 @@ footer {
     padding: 1em;
 }
 
-h3 {
-    color: $color-acento;
-}
+
 
 i {
     color: $color-letra;
@@ -23,6 +21,11 @@ i {
     flex-wrap: wrap;
     justify-content: space-evenly;
     text-align: justify;
+}
+
+h3 {
+    color: $color-acento;
+    text-align: start;
 }
 
 .section1, .section2, .section3 {
