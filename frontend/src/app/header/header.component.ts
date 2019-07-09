@@ -8,7 +8,7 @@ import {UsersService} from '../users/users.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService) { }//inyectamos el UsersServices para que podamos acceder a la variable user, que hemos definido y que contiene todas sus propiedades. Lo hemos usado, por ejemplo en el header para hacer el render condicional del login logout...
 
   ngOnInit() {
     this.userService.getUserInfo()

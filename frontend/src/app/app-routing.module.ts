@@ -26,6 +26,7 @@ const routes: Routes = [
   {path: 'list/:id', component: ListDetailsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'logout', component: HomeComponent},
   {path: '**', component: Notfound404Component},
 ];
 

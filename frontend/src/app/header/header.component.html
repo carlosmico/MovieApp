@@ -55,12 +55,12 @@
       </li>
 
       <li  class="loggedIn" *ngIf="userService.user">
-        <div class="nav-item active">
+        <div class="username">
           <a class="nav-link">{{userService.user.username}}</a>
         </div>
 
         <div class="nav-item active">
-          <a class="nav-link" [routerLink]="['home']">Logout</a>
+          <a class="nav-link" [routerLink]="['logout']">Logout</a>
         </div>
       </li>
 
