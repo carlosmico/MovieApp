@@ -22,7 +22,6 @@ import { ListsComponent } from './movies/lists/lists.component';
 import { BuyTicketsComponent } from './buy-tickets/buy-tickets.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { PersonComponent } from './people/person/person.component';
 
@@ -53,7 +52,6 @@ import { PersonComponent } from './people/person/person.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

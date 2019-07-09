@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from "../movies.service"
-
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MoviesService } from "../movies.service";
 
 @Component({
   selector: 'app-popular-movies',
