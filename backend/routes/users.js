@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const UserModel=require('../models/User')
+const isAuthenticated = require('../middleware/isAuthenticated')
 
 
 router.post('/register', async (req, res) => {
