@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
 
   }
   handleSubmit(){
+    console.log(this.form)
     if(this.form.status === "VALID"){
       console.log(this.form)
       //register es el método definido en el serivicio

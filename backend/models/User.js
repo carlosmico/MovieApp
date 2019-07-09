@@ -28,17 +28,13 @@ const userSchema = new mongoose.Schema ({
         }
     }],
 
-    list :{
-        type: Array
-    },
+    list :[Number]
+    ,
 
-    watchlist: {
-        type: Array
-    },
+    watchlist: [Number]
+    ,
 
-    favorites:{
-        type: Array
-    }
+    favorites:[Number]
 
 });
 
