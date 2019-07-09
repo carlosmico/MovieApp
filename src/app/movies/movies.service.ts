@@ -76,9 +76,9 @@ export class MoviesService {
     return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
 
-  getList(id): Observable<any>{
+  getList(id, page:number): Observable<any>{
     
-      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=1&api_key=${API_KEY}`)}
+      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=${page}&api_key=${API_KEY}`)}
     // else if (id === 3682){
     //   return this.http.get(`https://api.themoviedb.org/4/list/3682?page=1&api_key=${API_KEY}`)}
     // else if (id === 28){

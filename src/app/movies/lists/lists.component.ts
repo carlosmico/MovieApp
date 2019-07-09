@@ -22,7 +22,7 @@ export class ListsComponent implements OnInit {
   loadLists(): void {
     for (let i = 0; i < this.list_ID.length; i++) {
       let id = this.list_ID[i]
-      this.moviesService.getList(id).subscribe(value => {
+      this.moviesService.getList(id,1).subscribe(value => {
         this.lists.push(value);
         this.lists_random = value.lists;
         // this.lists_random = Math.floor(Math.random() * this.lists.length);
