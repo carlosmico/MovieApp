@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies/movies.service'
-import { count } from '@swimlane/ngx-charts';
 import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
