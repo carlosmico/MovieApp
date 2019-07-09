@@ -56,7 +56,7 @@
       justify-content: space-evenly;
     }
 
-    @media(max-width: 320px){
+    @media(max-width: 400px){
       .navbar-nav{
         flex-direction: column;
       }

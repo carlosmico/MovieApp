@@ -34,6 +34,8 @@ export class CertificationsComponent implements OnInit {
   }
 
   printCertifications(country:string):void{
+    this.countrySelected = country;
+    
     this.certs = this.certifications[country];
   }
 
