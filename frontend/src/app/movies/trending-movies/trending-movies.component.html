@@ -1,0 +1,31 @@
+<div class="trending">
+  <h2>Trending Movies</h2>
+
+  <p>By Day</p>
+
+  <div class="byDay list">
+    <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor="let movie of trendingByDay">
+      <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="{{movie.title}}">
+
+      <div class="description">
+        <p class="title">{{movie.title}}</p>
+        <p class="vote">{{movie.vote_average}}<img
+            src="http://1.bp.blogspot.com/_Dz2SqLo_Q9U/SAq9rTOTZiI/AAAAAAAAAR8/Gmik6H2hIZw/s320/2.gif" /></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="secondTitle">By Week</p>
+
+  <div class="byWeek list">
+    <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor="let movie of trendingByWeek">
+      <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="{{movie.title}}">
+
+      <div class="description">
+        <p class="title">{{movie.title}}</p>
+        <p class="vote">{{movie.vote_average}}<img
+            src="http://1.bp.blogspot.com/_Dz2SqLo_Q9U/SAq9rTOTZiI/AAAAAAAAAR8/Gmik6H2hIZw/s320/2.gif" /></p>
+      </div>
+    </div>
+  </div>
+</div>

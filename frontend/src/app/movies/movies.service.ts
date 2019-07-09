@@ -11,6 +11,9 @@ const URLS = {
   upcomingMovies: 'https://api.themoviedb.org/3/movie/upcoming?api_key=',
   topRatedMovies: 'https://api.themoviedb.org/3/movie/top_rated?api_key=',
   latestMovies: 'https://api.themoviedb.org/3/movie/latest?api_key=',
+  certifications: 'https://api.themoviedb.org/3/certification/movie/list?api_key=',
+  trendingDay: 'https://api.themoviedb.org/3/trending/movie/day?api_key=',
+  trendingWeek: 'https://api.themoviedb.org/3/trending/movie/week?api_key=',
 }
 
 @Injectable({
@@ -23,6 +26,18 @@ export class MoviesService {
 
   searchMovies(textIntroduced:string):any{
     return this.http.get(`${URLS.searchMovies}${API_KEY}&query=${textIntroduced}`);
+  }
+
+  getCertifications():any{
+    return this.http.get(`${URLS.certifications}${API_KEY}`);
+  }
+  
+  getTrendingMoviesByDay():Observable<any>{
+    return this.http.get(`${URLS.trendingDay}${API_KEY}`);
+  }
+
+  getTrendingMoviesByWeek():Observable<any>{
+    return this.http.get(`${URLS.trendingWeek}${API_KEY}`);
   }
 
   getGenres():any{
@@ -76,9 +91,9 @@ export class MoviesService {
     return this.http.get(`${URLS.latestMovies}${API_KEY}`);
   }
 
-  getList(id): Observable<any>{
+  getList(id, page:number): Observable<any>{
     
-      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=1&api_key=${API_KEY}`)}
+      return this.http.get(`https://api.themoviedb.org/4/list/${id}?page=${page}&api_key=${API_KEY}`)}
     // else if (id === 3682){
     //   return this.http.get(`https://api.themoviedb.org/4/list/3682?page=1&api_key=${API_KEY}`)}
     // else if (id === 28){

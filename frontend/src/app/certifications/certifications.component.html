@@ -1,0 +1,16 @@
+<div class="certifications">
+  <h1>Certifications</h1>
+
+  <div class="countries">
+    <span class="country" *ngFor='let country of countries' (click)='printCertifications(country)'>{{country}}</span>
+  </div>
+
+  <h2>{{countrySelected}}</h2>
+
+  <div class="certs">
+    <div class="cert" *ngFor='let cert of certs'>
+      <p class="certification">{{cert.certification}}</p>
+      <p class="meaning">{{cert.meaning}}</p>
+    </div>
+  </div>
+</div>
