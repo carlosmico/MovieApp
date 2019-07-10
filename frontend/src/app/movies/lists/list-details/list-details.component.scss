@@ -6,24 +6,58 @@
   align-items: center;
   background-color: $color-fondo;
 
+  .name_list {
+    text-align: center;
+    margin: 2em;
+    font-size: 3em;
+    background: rgba(116, 115, 115, 0.623);
+    width: 100vw;
+    padding: 1em;
+    color: $color-fondo;
+
+  }
+
+  .list_info {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    color: rgb(1, 180, 1);
+    flex-wrap: wrap;
+    .detail_info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        display: flex;
+        align-items: flex-start;
+        font-size: 2em;
+
+        img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+
   h1 {
     color: $color-acento;
     padding: 1em;
     text-align: center;
   }
 
-  .navigation{
+  .navigation {
     display: flex;
-    align-items: center;
+    justify-content: center;
     padding: 1em;
 
-    span{
+    span {
       font-size: 1.5em;
       margin-left: 0.3em;
       margin-right: 0.3em;
     }
 
-    i{
+    i {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,7 +80,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    .moviesNotFound{
+    .moviesNotFound {
       font-size: 1.2em;
     }
 
@@ -100,7 +134,7 @@
           text-align: center;
           align-self: flex-end;
 
-          &:hover{
+          &:hover {
             color: $color-acento;
           }
         }
@@ -118,7 +152,7 @@
             width: 100%;
           }
         }
-        
+
       }
     }
   }

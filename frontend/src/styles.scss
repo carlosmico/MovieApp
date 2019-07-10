@@ -5,6 +5,7 @@ $color-acento: #00adb5;
 $color-letra: whitesmoke;
 $color-letra-gris: grey;
 $color-fondo: #EEEE;
+$color-contraste: #02f4ff;
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -21,7 +22,7 @@ body{
 }
 
 ::selection {
-  background-color: $color-acento;
+  background-color: $color-contraste;
   color: #ffffff;
 }
 

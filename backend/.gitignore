@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -47,3 +48,7 @@ Thumbs.db
 
 **/node_modules
 package-lock.json
+=======
+**/node_modules
+**/package-lock.json
+>>>>>>> a45e2bdca268258318249fbad8056eb3ed7ca08b
