@@ -14,14 +14,20 @@ import { Notfound404Component} from './notfound404/notfound404.component';
 import {ListDetailsComponent} from './movies/lists/list-details/list-details.component';
 import {RegisterComponent} from './users/register/register.component';
 import {LoginComponent} from './users/login/login.component'
+import {CertificationsComponent} from './certifications/certifications.component'
+import { PersonComponent } from './people/person/person.component';
+import { PopularPeopleComponent } from './people/popular-people/popular-people.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'certifications', component: CertificationsComponent},
   {path: 'discover', component: DiscoverMoviesComponent},
   {path: 'popular', component: PopularMoviesComponent},
   {path: 'topRated', component: TopRateComponent},
   {path: 'upcoming', component: UpcomingMoviesComponent},
   {path: 'movie/:id', component: MovieComponent},
+  {path: 'people', component: PopularPeopleComponent},
+  {path: 'person/:id', component: PersonComponent },
   {path: 'random', component: RandomComponent},
   {path: 'list/:id', component: ListDetailsComponent},
   {path: 'register', component: RegisterComponent},
