@@ -1,0 +1,111 @@
+
+<body class="generalInfo" background="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">
+  <div class="backgroundColor">
+  <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="Cover Page" class="coverPage">
+    <div class="text">
+
+      <div class="titles">
+        <h1>{{movie.title}}</h1>
+        <h3>{{movie.release_date}}</h3>
+      </div>
+
+      <div class="genres">
+        <h4 class="titleGenres">Genres:</h4> 
+        <div class = "genre" *ngFor='let genre of genres'>{{genre.name}}  </div>
+      </div>
+      
+      <div class="movieScore">
+        <h4>User score: </h4>
+        <div class="score">{{movie.vote_average}}</div>
+      </div>
+      
+      <div class="menu">
+        <div class="buttons">
+        <button class="addToList" title="Add to list"><i class="fa fa-list" aria-hidden="true"></i></button>
+        <button class="markAsFavorite" title="Mark as favorite"><i class="fa fa-heart" aria-hidden="true"></i></button>
+        <button class="addWatchlist" title="Add to your watchlist"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+        <button class="rateIt" title="Rate it!"><i class="fa fa-star" aria-hidden="true"></i></button>
+      </div>
+      
+      <div class="trailer">
+        <button class="playTrailer"><i class="fa fa-play" aria-hidden="true"></i> Play trailer</button>
+      </div>
+    </div>
+    
+    <div class="overview">
+      <h3 class="titleOverview">Overview</h3>
+      <p>{{movie.overview}}</p>
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+  
+  <div class="similarMoviesByGenre">
+    <div class="titleContainerSimilarMoviesByGenre">
+      <h3 class="similarMoviesTitle">Similar Movies by Genre</h3>
+    </div>
+
+    <div class="similarMovies">
+      <div  class="similarMovie" *ngFor="let similarMovie of similarMovies"  >
+        <body class="similarMovieImageContainer"   (mouseover) = "showMoreInfo(similarMovie) "  background="https://image.tmdb.org/t/p/w500/{{similarMovie.poster_path}}">
+          <div class="moreInfo" *ngIf="similarMovie.showInfo"  (mouseout) = "hideMoreInfo(similarMovie)" (click) = "showTheInfo(similarMovie)">
+            <span>+ Info</span>
+          </div>
+        </body>
+
+
+        <div class="infoSimilarMovie" *ngIf="similarMovie.showInfoSimilar"  >
+          <i class="fas fa-times close" (click) = "hideTheInfo(similarMovie)"></i>
+              <div class="contentinfoSimilarMovie">
+            <div class="similarMovieText">
+              <h2 class="similarMovieTitle">{{similarMovie.title}}</h2>
+              <p class="similarMovieDate">{{similarMovie.release_date}}</p>
+              <p class="similarMovieDescription">{{similarMovie.overview}}</p>
+              <button [routerLink]='["/movie",movie.id]' class="goToTheMovie">Go to the movie</button>
+              
+            </div>
+          </div>
+          </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="cast">
+    <div class="titleCastContainer">
+      <h3 class="castTitle">Casting</h3>
+    </div>
+    
+    <div class="casting" >
+      <div  class="artist" *ngFor="let artist of cast"  >
+        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"    background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
+          <span class="artistName">{{artist.name}}</span>
+          <div class="character" *ngIf = "artist.showCharacter" (mouseout) = "hideTheCharacter(artist)">
+            <span>{{artist.character}}</span>
+          </div>
+        </body>
+  </div>
+  </div>
+  </div>
+
+  <div class="crew">
+    <div class="titleCrewContainer">
+      <h3 class="crewTitle">Crew</h3>
+    </div>
+    
+    <div class="theCrew" >
+      <div  class="member" *ngFor="let member of crew"  >
+        <body class="memberContainer" (mouseover) = "showTheJob(member)"   background="https://image.tmdb.org/t/p/w500/{{member.profile_path}}">
+          <span class="memberName">{{member.name}}</span>
+          <div class="job" *ngIf = "member.showJob" (mouseout) = "hideTheJob(member)">
+            <span>{{member.job}}</span>
+          </div>
+        </body>
+  </div>
+  </div>
+  </div>
+
+
+

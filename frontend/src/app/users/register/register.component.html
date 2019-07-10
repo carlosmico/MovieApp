@@ -1,0 +1,20 @@
+<h2>Register </h2>
+<form class="registerForm" [formGroup]="form" (submit) = "handleSubmit()"> <!--bindeamos el formulario para que su valor sea el del form que hemos definido en el Register.ts como FormGroup-->
+    
+    <input type="text" class="username" formControlName="username" placeholder="Insert username">
+    <div class="error" *ngIf="form.get('username').invalid && form.get('username').touched">
+        Username debe de tener entre 8 y 40 carácteres
+    </div>
+
+    <input type="text" class="email" formControlName="email" placeholder="Insert email">
+    <div class="error" *ngIf="form.get('email').invalid &&  form.get('email').touched">
+        Por favor, introduzca un email válido
+    </div>
+
+    <input type="password"class="password" formControlName="password"  placeholder="Insert password">
+    <div class="error" *ngIf="form.get('password').invalid &&  form.get('password').touched">
+        La contraseña ha de ser de al menos 8 carácteres y contener números y letras
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
