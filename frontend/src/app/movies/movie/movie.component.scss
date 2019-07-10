@@ -188,6 +188,18 @@ p{
                         width: 100%;
                         
                     }
+
+                    & button{
+                        all: unset;
+                        padding: 0.2em;
+
+                        &:hover{
+                            background-color: $color-acento;
+                            border-radius: 5px;
+                            color: $color-letra;
+                        }
+                    }
+
                     & .similarMovieText{
                         right: 0;
                         width: 20em;

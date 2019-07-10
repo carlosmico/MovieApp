@@ -64,7 +64,7 @@
               <h2 class="similarMovieTitle">{{similarMovie.title}}</h2>
               <p class="similarMovieDate">{{similarMovie.release_date}}</p>
               <p class="similarMovieDescription">{{similarMovie.overview}}</p>
-              <button [routerLink]='["/movie",movie.id]' class="goToTheMovie">Go to the movie</button>
+              <button [routerLink]='["/movie",similarMovie.id]' class="goToTheMovie">Go to the movie</button>
               
             </div>
           </div>
@@ -80,7 +80,7 @@
     
     <div class="casting" >
       <div  class="artist" *ngFor="let artist of cast"  >
-        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"  [routerLink]='["/person",person.id]'  background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
+        <body class="artistContainer" (mouseover) = "showTheCharacter(artist)"  [routerLink]='["/person",artist.id]'  background="https://image.tmdb.org/t/p/w500/{{artist.profile_path}}">
           <span class="artistName">{{artist.name}}</span>
           <div class="character" *ngIf = "artist.showCharacter" (mouseout) = "hideTheCharacter(artist)">
             <span>{{artist.character}}</span>
