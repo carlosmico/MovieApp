@@ -5,15 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:back":"cd backend && npm start",
+    "start:back":"cd backend && npm dev",
     "start:front":"cd frontend && npm start",
     "start":"concurrently \"npm run start:back\" \"npm run start:front\" "
   },
-<<<<<<< HEAD
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carlosmico/MovieApp.git"
-=======
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.1",
@@ -29,7 +24,6 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
->>>>>>> d791ce3522d1aa6f5bf2253c8f956ee498e4a32b
   },
   "keywords": [],
   "author": "",
