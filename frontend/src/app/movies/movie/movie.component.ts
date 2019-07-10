@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import {MoviesService} from '../movies.service';
-import {ActivatedRoute} from '@angular/router'
+import { MoviesService } from '../movies.service';
+import { ActivatedRoute } from '@angular/router';
+import { UsersService } from '../../users/users.service'
 
 
 @Component({
@@ -8,6 +9,7 @@ import {ActivatedRoute} from '@angular/router'
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
+
 export class MovieComponent implements OnInit {
   movie:any
   genres: any[];
@@ -16,10 +18,8 @@ export class MovieComponent implements OnInit {
   castNcrew: any;
   cast: any[];
   crew: any[];
-
-
  
-  constructor(private route: ActivatedRoute, private moviesServices: MoviesService) { }
+  constructor(private route: ActivatedRoute, private moviesServices: MoviesService, private usersService: UsersService) { }
 
   ngOnInit() {
 
@@ -51,7 +51,7 @@ export class MovieComponent implements OnInit {
         console.log(this.crew)
       })
     })
-    }
+  }
 
   showMoreInfo (similarMovie): void{
     similarMovie['showInfo']=true
@@ -86,5 +86,20 @@ export class MovieComponent implements OnInit {
     member['showJob'] = false;
   }
 
+  like(movie) {
+    // this.usersService.likeMovie(movie.id)
+    // .subscribe(res => {
+    //   this.usersService.user = res;
+      movie["like"]=true;
+      // })
+    }
+
+  dislike(movie) {
+    // this.usersService.dislikeMovie(movie.id)
+    // .subscribe(res => {
+    //   this.usersService.user = res;
+      movie["like"]=false;
+    // })
+  }
 
 }

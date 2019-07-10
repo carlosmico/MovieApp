@@ -24,6 +24,22 @@ import { Observable } from 'rxjs';
           }
         })
       }
+
+      // likeMovie(id:string):Observable<object> {
+      //   return this.http.get(`http://localhost:3001/users/like/${id}`,{
+      //     headers:{
+      //       authenticate: localStorage.getItem("authToken")
+      //     }
+      //   })
+      // }
+
+      // dislikeMovie(id:string):Observable<object> {
+      //   return this.http.get(`http://localhost:3001/users/dislike/${id}`,{
+      //     headers:{
+      //       authenticate: localStorage.getItem("authToken")
+      //     }
+      //   })
+      // }
     
 
   }

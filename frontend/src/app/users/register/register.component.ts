@@ -25,13 +25,12 @@ export class RegisterComponent implements OnInit {
   handleSubmit(){
     console.log(this.form)
     if(this.form.status === "VALID"){
-      console.log(this.form)
       //register es el método definido en el serivicio
       //this.form.value tiene los datos que hemos metido en el formulario
       this.usersServices.register(this.form.value).subscribe(res=>{
+        console.log(res)
         localStorage.setItem('authToken', res.token)
-        this.usersServices.isAuth = true;
-        console.log(res)},
+        },
          error => console.log(error)) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
     }
   }
