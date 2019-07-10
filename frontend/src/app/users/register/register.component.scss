@@ -26,9 +26,11 @@ h2{
 
     input{
         width: 70%;
-        // border: 1px solid black;
+        border: 1px solid rgba(0, 0, 0, 0.685);
         margin: 1em;
         text-align: center;
+        border-radius: 0.5em;
+
         &:hover{
             box-shadow: -1px 6px 44px 11px rgba(179,177,179,1);
         }
@@ -37,6 +39,9 @@ h2{
     button{
         margin: 1em;
         width: 50%;
+        border-radius: 0.5em;
+        border: 1px solid rgba(0, 0, 0, 0.685);
+
         &:hover{
             box-shadow: -1px 6px 44px 11px rgba(179,177,179,1);
         }

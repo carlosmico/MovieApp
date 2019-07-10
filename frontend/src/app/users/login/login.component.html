@@ -1,15 +1,19 @@
 <div class="login_page">
-<h2>Login </h2>
+    <h2>Login </h2>
 
-<form class="loginForm" [formGroup]="form" (submit) = "handleSubmit()"> <!--bindeamos el formulario para que su valor sea el del form que hemos definido en el Register.ts como FormGroup-->
-    
-    <input type="text" class="usernameOrEmail" formControlName="usernameOrEmail" placeholder="Insert username or email">
-    
-    <input type="password"class="password" formControlName="password"  placeholder="Insert password">
-   
-    <button type="submit">Submit</button>
+    <form class="loginForm" [formGroup]="form" (submit)="handleSubmit()">
+        <!--bindeamos el formulario para que su valor sea el del form que hemos definido en el Register.ts como FormGroup-->
 
-</form>
+        <input type="text" class="usernameOrEmail" formControlName="usernameOrEmail"
+            placeholder="Insert username or email">
+
+        <input type="password" class="password" formControlName="password" placeholder="Insert password">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div [routerLink]='["/register"]'>
+        <div class="no_login"> Are you not register yet? </div>
+    </div>
 </div>
-
-
