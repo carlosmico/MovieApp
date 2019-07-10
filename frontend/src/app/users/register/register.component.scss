@@ -1,0 +1,45 @@
+@import '../../../styles.scss';
+
+.register_page {
+display: flex;
+flex-direction: column;
+// border: 1px solid black;
+align-items: center;
+h2{
+    text-align: center;
+    font-family: roboto;
+    padding: 1em;
+    margin: 1em;
+    color: #222831;
+    font-size: 3.5em;
+    background-image: url('../../../assets/uncoming.jpg');
+    background-size: cover;
+    width: 100vw;
+}
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 1px solid black;
+    width: 50%;
+    margin-bottom: 2em;
+
+    input{
+        width: 70%;
+        // border: 1px solid black;
+        margin: 1em;
+        text-align: center;
+        &:hover{
+            box-shadow: -1px 6px 44px 11px rgba(179,177,179,1);
+        }
+    }
+
+    button{
+        margin: 1em;
+        width: 50%;
+        &:hover{
+            box-shadow: -1px 6px 44px 11px rgba(179,177,179,1);
+        }
+    }
+  }
+}
