@@ -10,7 +10,7 @@ import { MoviesService } from "../movies.service";
 export class PopularMoviesComponent implements OnInit {
   actualPage: number = 1
   maxPage: number
-  movies: Object[]
+  movies: any[]
 
   constructor(private moviesService: MoviesService) { }
 

@@ -9,13 +9,13 @@ import {ActivatedRoute} from '@angular/router'
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  movie:Object
-  genres: Object[];
-  videos: Object[];
-  similarMovies: Object[];
-  castNcrew: Object;
-  cast: Object[];
-  crew: Object[];
+  movie:any
+  genres: any[];
+  videos: any[];
+  similarMovies: any[];
+  castNcrew: any;
+  cast: any[];
+  crew: any[];
 
 
  

@@ -9,7 +9,7 @@ import { MoviesService } from '../movies.service'
 })
 export class LatestmoviesComponent implements OnInit {
 
-  movie:Object;
+  movie:any;
   constructor(private MoviesService: MoviesService) { }
 
 

@@ -10,7 +10,7 @@ import { async } from 'q';
   styleUrls: ['./random.component.scss']
 })
 export class RandomComponent implements OnInit {
- randomMovie: object;
+ randomMovie: any;
   max_pages: number;
   page_random: number;
   constructor(private moviesService: MoviesService) { }

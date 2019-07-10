@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PersonComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private personServices: PeopleService) { }
-  person: Object[];
+  person: any[];
 
   ngOnInit() {
     this.getPerson();
