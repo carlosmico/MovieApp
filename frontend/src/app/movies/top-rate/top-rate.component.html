@@ -1,7 +1,7 @@
 <div class="general-movies">
-    <h1>Top Rate</h1>
-  
-    
+  <h1>Top Rate</h1>
+
+
   <div class="navigation">
     <i (click)="firstPage()">1</i>
     <i class="fas fa-arrow-left" (click)="previousPage()"></i>
@@ -12,8 +12,12 @@
 
   <div class="movies">
     <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor='let movie of movies'>
-      <div class="leftSection">
+      <div class="leftSection" *ngIf='movie.poster_path'>
         <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+      </div>
+
+      <div class="leftSection" *ngIf='!movie.poster_path'>
+        <img src='../../../assets/errorImage.png'>
       </div>
 
       <div class="rightSection">
