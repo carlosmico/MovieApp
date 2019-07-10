@@ -11,7 +11,8 @@
       </button>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <button class="dropdown-item" type="button" *ngFor='let year of years' (click)="filterByYear(year)">{{year}}</button>
+        <button class="dropdown-item" type="button" *ngFor='let year of years'
+          (click)="filterByYear(year)">{{year}}</button>
       </div>
     </div>
 
@@ -44,10 +45,14 @@
 
   <div class="movies">
     <p class='moviesNotFound' *ngIf='movies.length === 0'>No se han encontrado películas.</p>
-    
+
     <div class="movie" [routerLink]='["/movie",movie.id]' *ngFor='let movie of movies'>
-      <div class="leftSection">
+      <div class="leftSection" *ngIf='movie.poster_path'>
         <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' alt={{movie.title}}>
+      </div>
+
+      <div class="leftSection" *ngIf='!movie.poster_path'>
+        <img src='../../../assets/errorImage.png'>
       </div>
 
       <div class="rightSection">

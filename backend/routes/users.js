@@ -12,7 +12,8 @@ router.post('/register', async (req, res) => {
           password: req.body.password,
           list: [],
           watchlist: [],
-          favorites: []
+          favorites: [],
+          likes:[Number] 
          
       }).save();
       const token = await user.generateAuthToken();//ejecutamos el metodo que gnera un token al usuario. Pero esperamos a ue llegue el token generado
@@ -35,9 +36,29 @@ router.get('/info', isAuthenticated, (req, res)=>{
     res.send(req.user)
 })
 
-// router.post('/favorite', async (req, res) =>{
+// router.get('/like/:idMovie', isAuthenticated, async(req,res)=>{
+//     try {
+//         const user = await UserModel.findByIdAndUpdate(req.user._id, {$push: {
+//         likes: Number(req.params.idMovie)    } 
+//      }, {new:true} )
+//         res.send(user) 
+//     } catch (error) {
+//         res.status(500).send(error)
+//     }
+// }) 
 
-// })
+// router.get('/dislike/:idMovie', isAuthenticated, async(req,res)=>{
+//     try {
+//         const user = await UserModel.findByIdAndUpdate(req.user._id, {$pull: {
+//         likes: Number(req.params.idMovie)    
+//     } 
+//     }, {new:true} )
+//         res.send(user) 
+//     } catch (error) {
+//         res.status(500).send(error)
+//     }
+// }) 
+
 
 
 module.exports = router;
