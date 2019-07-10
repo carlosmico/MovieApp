@@ -25,6 +25,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListDetailsComponent } from './movies/lists/list-details/list-details.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginComponent } from './users/login/login.component';
+import { TrendingMoviesComponent } from './movies/trending-movies/trending-movies.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+import { PersonComponent } from './people/person/person.component';
+import { PopularPeopleComponent } from './people/popular-people/popular-people.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +45,14 @@ import { LoginComponent } from './users/login/login.component';
     RandomComponent,
     DiscoverMoviesComponent,
     Notfound404Component,
+    PopularPeopleComponent,
     ListsComponent,
     BuyTicketsComponent,
     SearchBarComponent,
     ListDetailsComponent,
+    CertificationsComponent,
+    TrendingMoviesComponent,
+    PersonComponent,
     RegisterComponent,
     LoginComponent
   ],
