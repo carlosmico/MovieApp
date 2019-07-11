@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserInfo()
       .subscribe(res => {
-        console.log(res);
         this.userService.user = res
       }),
       error => console.log('no estás conectado')

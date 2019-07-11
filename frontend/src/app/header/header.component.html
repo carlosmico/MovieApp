@@ -31,16 +31,27 @@
           <a class="nav-link" [routerLink]="['upcoming']">Upcoming</a>
         </li>
 
-        <li class="nav-item active loggedIn" *ngIf="userService.user">
-          <img src="../../assets/logo_user.png" alt="user">
-          <a class="nav-link">{{userService.user.username}}</a>
+        <li class="nav-item active notLogged" [hidden]="userService.user" [routerLink]="['login']">
+          <img src="../../assets/loginIcon.png" alt="user">
+          <span>Login</span>
         </li>
 
-        <li class="nav-item active notLoggedIn" *ngIf="!userService.user">
-            <a class="nav-link" [routerLink]="['login']">
-              <img src="../../assets/logo_user.png" alt="user">
-            </a>
+        <li class="nav-item active logged" [hidden]="!userService.user" [routerLink]="['profile']">
+          <img src="../../assets/logoutIcon.png" alt="user">
+          <span>{{userService.user?.username}}</span>
         </li>
+
+        <!-- Si el usuario no está loggeado aparecerá esta sección -->
+        <!-- <li class="nav-item active notLogged" *ngIf="{{!userService.user}}" [routerLink]="['login']">
+          <img src="../../assets/loginIcon.png" alt="user">
+          <span>Login</span>
+        </li> -->
+
+        <!-- Si el usuario está loggeado aparecerá esta sección -->
+        <!-- <li class="nav-item active logged" *ngIf="{{userService.user}}" [routerLink]="['profile']">
+          <img src="../../assets/logoutIcon.png" alt="user">
+          <span>{{userService.user.username}}</span>
+        </li> -->
       </ul>
     </div>
   </nav>
