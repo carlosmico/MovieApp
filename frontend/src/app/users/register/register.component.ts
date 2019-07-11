@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs'
 
@@ -9,10 +9,11 @@ import { Observable } from 'rxjs'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private route: ActivatedRoute, private usersServices: UsersService) { }//en mínuscula la instancia, en mayúscula la clase (usersServices, UsersServices)
+  constructor(private route: ActivatedRoute, private usersServices: UsersService, public router: Router) { }//en mínuscula la instancia, en mayúscula la clase (usersServices, UsersServices)
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -29,6 +30,8 @@ export class RegisterComponent implements OnInit {
       this.usersServices.register(this.form.value).subscribe(res => {
         console.log(res)
         localStorage.setItem('authToken', res.token); //Acción de Login, guardamos el token recibido al registrar el usuario y así podemos saber quién está logeado.
+
+        this.router.navigate(['/']);//Redirigimos al usuario al home ya que se ha registrado y loggeado correctamente
       },
         error => console.log(error)) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
     }
