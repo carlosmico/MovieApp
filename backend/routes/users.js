@@ -64,5 +64,17 @@ router.get('/info', isAuthenticated, (req, res)=>{
 // }) 
 
 
+// router.patch( '/updateProfile', isAuthenticated, uploadAvatar.single('avatar'), async ( req, res ) => { //aquí se añade uploadAvatar para que, en esta función concreta, se aplique multer. Primero hace el auth para ver que el user es el que toca, y luego el uploadAvatar te lo guarda. Hay que poner .single('avatar') para que no de error, ya que puedes subir solo un archivo (single) o multiples (array).
+//     try {
+//         const user = await UserModel.findByIdAndUpdate( req.user._id,{ //aquí se hace la petición para actualizar la imagen.
+//             ...req.body, // aquí está la petición de todo el usuario.
+//             imagePath: req.file.filename //añadimos al campo imagePath el filname que nos devuelve Multer, para asegurarnos que es el mismo que el de la base de datos.
+//         },  { new: true, useFindAndModify: false } )
+//         res.send( user )
+//     } catch ( error ) {
+//         res.status( 500 ).send( error )
+//     }
+// } )
+
 
 module.exports = router;

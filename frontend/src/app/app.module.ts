@@ -29,6 +29,7 @@ import { TrendingMoviesComponent } from './movies/trending-movies/trending-movie
 import { CertificationsComponent } from './certifications/certifications.component';
 import { PersonComponent } from './people/person/person.component';
 import { PopularPeopleComponent } from './people/popular-people/popular-people.component';
+import { ProfileComponent } from './users/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { PopularPeopleComponent } from './people/popular-people/popular-people.c
     CertificationsComponent,
     TrendingMoviesComponent,
     PersonComponent,
-    PopularPeopleComponent
+    PopularPeopleComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
