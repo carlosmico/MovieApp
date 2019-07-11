@@ -149,7 +149,7 @@ p{
                 & .close{
                     position: absolute;
                     top: 6px;
-                    right: 6px;
+                    right: 15px;
                 }
                 & .similarMovieImageContainer{
                     display: flex;
@@ -164,6 +164,7 @@ p{
                         width: 100%;
                         background-color: rgba(173, 173, 173, 0.5);
                         color: $color-letra;
+                        
                         & span{
                             position: absolute;
                             bottom: 50%;
@@ -175,22 +176,36 @@ p{
                 }
                 
                 & .infoSimilarMovie{
-                    width: 20em;
-                    padding: 0 1em;
+                    width: 22em;
+                    padding: 1em 1em;
+                    height: 100%;
                     overflow-y: scroll;
                     
                     & .contentinfoSimilarMovie{
                         width: 90%;
-                        position: absolute;
                         top: 1.5em;
                         text-align: justify;
                         width: 100%;
                         
                     }
+
+                    & button{
+                        all: unset;
+                        padding: 0.2em;
+                        background-color: $color-acento;
+                        border-radius: 5px;
+                        color: $color-letra;
+
+                        &:hover{
+                            transition-duration: 1s;
+                            background-color: #009aa2;
+                        }
+                    }
+
                     & .similarMovieText{
                         right: 0;
                         width: 20em;
-                        overflow-y: hidden;
+                     
 
                         & .similarMovieTitle{
                             width: 90%;
@@ -199,7 +214,7 @@ p{
                         
                         & .similarMovieDescription{
                             width: 90%;
-                            word-break: break-all; 
+                            overflow-wrap: normal;
                         }
                     }
                 }
