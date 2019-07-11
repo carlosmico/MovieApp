@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
   })
 
   export class UsersService {
-    isAuth: boolean;//variable para ver si el usuario está logeado y que podamos pintar el header de una forma u otra dependiendo de eso. Aunque en realidad la consulta debería de hacerse en el backedn, porque el token expira
     user: object; // creamos el objeto usuario en el servicio, para que todos los componentes tengan acceso a él, subscribiéndose a los observables qeu salgan de él.
 
     constructor(private http: HttpClient) { }
 
       register(user):Observable<any>{
+        this.user = user;
+        
         return this.http.post('http://localhost:3001/users/register', user)
       }
 
