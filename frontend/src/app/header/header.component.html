@@ -30,33 +30,19 @@
         <li class="nav-item active">
           <a class="nav-link" [routerLink]="['upcoming']">Upcoming</a>
         </li>
-        <div class='logo_user'>
-          <li class="loggedIn" *ngIf="userService.user">
-            <div class="username">
-              <a class="nav-link">{{userService.user.username}}</a>
-            </div>
 
-            <div class="nav-item active">
-              <a class="nav-link" [routerLink]="['logout']">Logout</a>
-            </div>
-          </li>
+        <li class="nav-item active loggedIn" *ngIf="userService.user">
+          <img src="../../assets/logo_user.png" alt="user">
+          <a class="nav-link">{{userService.user.username}}</a>
+        </li>
 
-          <li class="notLoggedIn" *ngIf="!userService.user">
-            <!-- <div class="nav-item active">
-              <a class="nav-link" [routerLink]="['register']">Register</a>
-            </div> -->
-
-            <div class="nav-item active">
-              <a class="nav-link" [routerLink]="['login']">
-                <img src="../../assets/logo_user.png" alt="user">
-              </a>
-            </div>
-          </li>
-        </div>
+        <li class="nav-item active notLoggedIn" *ngIf="!userService.user">
+            <a class="nav-link" [routerLink]="['login']">
+              <img src="../../assets/logo_user.png" alt="user">
+            </a>
+        </li>
       </ul>
     </div>
   </nav>
-
-
 </div>
 <!-- Links relacionados con la gestión de usuarios -->

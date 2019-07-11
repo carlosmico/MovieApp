@@ -15,7 +15,6 @@ router.post('/register', async (req, res) => {
           watchlist: [],
           favorites: [],
           likes:[Number] 
-         
       }).save();
       const token = await user.generateAuthToken();//ejecutamos el metodo que gnera un token al usuario. Pero esperamos a ue llegue el token generado
       res.status(201).send({
