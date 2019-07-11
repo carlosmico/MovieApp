@@ -192,11 +192,13 @@ p{
                     & button{
                         all: unset;
                         padding: 0.2em;
+                        background-color: $color-acento;
+                        border-radius: 5px;
+                        color: $color-letra;
 
                         &:hover{
-                            background-color: $color-acento;
-                            border-radius: 5px;
-                            color: $color-letra;
+                            transition-duration: 1s;
+                            background-color: #009aa2;
                         }
                     }
 
