@@ -1,0 +1,66 @@
+@import '../../../styles.scss';
+
+.profile_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2{
+    //   border:1px solid black;
+      font-size: 3em;
+      font-family: roboto;
+      padding: 1em;
+      margin-top: 1.5em;
+      width: 100%; 
+      text-align: center;
+      background: rgba(128, 128, 128, 0.301);
+  }
+
+  .user_info {
+    display: flex;
+    margin: 2em;
+    // border: 1px solid black;
+    width: 100%;
+    justify-content: space-evenly;
+    .inputs_info{
+      // border: 1px solid black;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 4em;
+      input{
+        border-radius: 0.3em;
+        border: none;
+        text-align: center;
+      }
+      button{
+        width: 40%;
+        margin-left: 30%;
+      }
+        
+    }
+
+    .avatar {
+        // border: 1px solid black;
+        border-radius: 50%;
+        padding: 1em;
+        padding-top: 8em;
+        padding-bottom: 7em; 
+      margin: 4em;
+    }
+
+    input {
+      margin: 1em;
+
+    }
+  }
+
+  .favorite {
+    margin-bottom: 3em;
+    h3{
+        font-size: 2em;
+        font-family: robot;
+    }
+  }
+}

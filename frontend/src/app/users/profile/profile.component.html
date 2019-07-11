@@ -1,0 +1,19 @@
+<div class="profile_page">
+    <h2>Welcome {{usersServices.user.username}}</h2>
+
+    <div class="user_info">
+        <input type="file" class="avatar">
+        <div class="inputs_info">
+            <input type="text" class="name" [value]='usersServices.user.username'>
+            <input type="text" class="email" [value]='usersServices.user.email'>
+            <input type="password" class="password" placeholder="Change your password">
+            <button type="submit" >Update</button>
+        </div>
+    </div>
+    <div class="favorite">
+        <div class="your_list">
+            <h3> Your favorite films: </h3>
+            <div class="films_list">{{usersServices.user.favorite}}</div>
+        </div>
+    </div>
+</div>
