@@ -22,7 +22,10 @@
       <div class="menu">
         <div class="buttons">
         <button class="addToList" title="Add to list"><i class="fa fa-list" aria-hidden="true"></i></button>
-        <button class="markAsFavorite" title="Mark as favorite"><i class="fa fa-heart" aria-hidden="true"></i></button>
+        <button class="markAsFavorite" title="Mark as favorite" (click)=like(movie) *ngIf="!movie.like"><i class="far fa-heart" aria-hidden="true"></i></button>
+        <button class="deleteFavorite" title="Delete as favorite" (click)=dislike(movie) *ngIf="movie.like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+        <!-- <button class="markAsFavorite" title="Mark as favorite" (click)=like(movie) *ngIf="!usersService.user?.likes.includes(movie.id)"><i class="far fa-heart" aria-hidden="true"></i></button>
+        <button class="deleteFavorite" title="Delete as favorite" (click)=dislike(movie) *ngIf="usersService.user?.likes.includes(movie.id)">><i class="fa fa-heart" aria-hidden="true"></i></button> -->
         <button class="addWatchlist" title="Add to your watchlist"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
         <button class="rateIt" title="Rate it!"><i class="fa fa-star" aria-hidden="true"></i></button>
       </div>
