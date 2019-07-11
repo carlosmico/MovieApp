@@ -10,6 +10,7 @@ app.use( function ( req, res, next ) { // permite peticiones de otros dominios
     res.header( "Access-Control-Allow-Methods", "GET, POST, PUT, PATCH" );
     next();
 } );
+
 app.use( express.json() ) // parsea el body de la petición a JSON
 
 app.use('/users',userRouter);

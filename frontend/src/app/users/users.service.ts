@@ -14,11 +14,11 @@ import { Observable } from 'rxjs';
     constructor(private http: HttpClient) { }
 
       register(user):Observable<any>{
-        return this.http.post('http://localhost:4201/users/register', user)
+        return this.http.post('http://localhost:3001/users/register', user)
       }
 
       getUserInfo():Observable<any>{
-        return this.http.get('http://localhost:4201/users/info',{
+        return this.http.get('http://localhost:3001/users/info',{
           headers : {
             authenticate: localStorage.getItem('authToken')
           }
