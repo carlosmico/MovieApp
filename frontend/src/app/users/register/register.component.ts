@@ -12,6 +12,7 @@ import { Observable } from 'rxjs'
 
 export class RegisterComponent implements OnInit {
   form: FormGroup;
+  emailDuplicado: boolean = false; //Esta variable nos indicará si existe un usuario con el email introducido para informar al usuario
 
   constructor(private route: ActivatedRoute, private usersServices: UsersService, public router: Router) { }//en mínuscula la instancia, en mayúscula la clase (usersServices, UsersServices)
 
@@ -33,7 +34,12 @@ export class RegisterComponent implements OnInit {
 
         this.router.navigate(['/']);//Redirigimos al usuario al home ya que se ha registrado y loggeado correctamente
       },
-        error => console.log(error)) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
+        error => {
+          console.log(error)
+          if (error.error.errmsg.includes('email_1 dup key')) {
+            this.emailDuplicado = true;
+          }
+        }) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
     }
   }
 }

@@ -11,6 +11,7 @@
     <div class="error" *ngIf="form.get('email').invalid &&  form.get('email').touched">
         Por favor, introduzca un email válido
     </div>
+    <p *ngIf='emailDuplicado'>Ya existe un usuario con este email</p>
 
     <input type="password"class="password" formControlName="password"  placeholder="Insert password">
     <div class="error" *ngIf="form.get('password').invalid &&  form.get('password').touched">
