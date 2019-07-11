@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const UserModel=require('../models/User')
-const isAuthenticated = require('../middleware/isAuthenticated')
+const UserModel=require('../models/User');
+const isAuthenticated = require('../middleware/isAuthenticated');
+const authorization = require ('../middleware/authorization.js')
 
 
 router.post('/register', async (req, res) => {
@@ -26,9 +27,13 @@ router.post('/register', async (req, res) => {
 });
 
 
-router.post('/logout', async(req, res) => {
-    
-})
+router.get( '/logout', authorization, ( req, res ) => {
+
+    const tokens = req.user.tokens.filter( token => token.type !== 'auth' ); //esto quitaría todos los tokens de tipo auth
+    UserModel.findByIdAndUpdate( req.user._id, { tokens }, { new: true, useFindAndModify: false } )//en req.user esta la información del usuario que se guardo desde el middleware
+        .then( () => res.status( 200 ).json( { message: 'You have been successfully logged out' } ) )
+        .catch( error => res.status( 500 ).json( { error, message: 'Something went wrong, our apologies' } ) );
+} );
 
 
 router.get('/info', isAuthenticated, (req, res)=>{
