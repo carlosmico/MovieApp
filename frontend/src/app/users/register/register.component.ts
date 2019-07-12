@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
       this.usersServices.register(this.form.value).subscribe(res => {
         console.log(res)
         localStorage.setItem('authToken', res.token); //Acción de Login, guardamos el token recibido al registrar el usuario y así podemos saber quién está logeado.
-
+        this.usersServices.user=res.user;
         this.router.navigate(['/']);//Redirigimos al usuario al home ya que se ha registrado y loggeado correctamente
       },
         error => {

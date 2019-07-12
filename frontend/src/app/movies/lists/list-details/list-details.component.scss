@@ -19,7 +19,7 @@
 
   .list_info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     list-style: none;
     color: rgb(1, 180, 1);
     flex-wrap: wrap;
@@ -27,6 +27,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 2em;
+
       span {
         display: flex;
         align-items: flex-start;
