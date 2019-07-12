@@ -22,16 +22,18 @@
         margin-right: 1em;
         margin-bottom: 1em;
         overflow-y: auto;
+        box-shadow: 0px 0px 10px 0px rgba(173, 173, 173, 1);
 
       h1 {
         margin-top: 0.2em;
         text-align: center;
-        color: $color-letra-gris;
+        color: $color-acento;
       }
 
       h4 {
         font-size: 1.2em;
         text-align: center;
+        color: $color-letra-gris;
       }
 
       .bioSection {
@@ -43,34 +45,31 @@
 }
 
 .MoreInfoSection {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    .moreInfo {
-      margin-left: 1em;
-      padding: 1em;
-      background-color: $color-letra;
+  .moreInfo {
+    margin-left: 1em;
+    padding: 1em;
+    background-color: $color-letra;
       
-      ul {
-        list-style: none;
+    ul {
+      list-style: none;
       
-        .outButton {
-          margin: 1em;
-        }
+      .moreButton {
+        margin: 1em;
       }
     }
+  }
 
-    .knownFor {
-        padding: 1em;
-        text-align: justify;
-        background-color: $color-letra;
-        margin: 1em;
-        overflow-y: auto;
-        
-        img {
-            height: 200px;
-            width: 125px;
-        }
-    }
+.movies {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $color-letra;
+  }
 
+  .movie {
+    margin: 0.5em;
+  }
 }

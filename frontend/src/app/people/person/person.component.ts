@@ -12,34 +12,30 @@ export class PersonComponent implements OnInit {
 
   constructor(public moviesServices: MoviesService, public route: ActivatedRoute, public personServices: PeopleService, public peopleService : PeopleService) { }
   person: any[];
-  people: object[];
-  movie: any;
-  actualPage: number = 1;
+  credits: any[];
 
   ngOnInit() {
     this.getPerson();
-    this.getPeople();
-    this.route.params.subscribe(params => {
-      this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
-      this.movie = value;
-    })
-    })
+    this.getKnownForMovies();
   }
 
-  getPeople(): void {
-    this.peopleService.getPopularPeople(this.actualPage).subscribe( result =>{
-      console.log(result);
-      this.people = result.results;
+  getKnownForMovies(): void {
+    this.route.params.subscribe(params => {
+      this.peopleService.getPersonKnownForMovies(params.known_for).subscribe( res =>{
+      // console.log(res);
+      this.credits = res.results;
     }, error =>{
       console.log(error);
     }    )
+    })
+    
   }
 
   getPerson(): void {
   this.route.params.subscribe(params => {
     this.personServices.getPersonById(params.id).subscribe( result =>{
       this.person = result; 
-      console.log(this.person);
+      // console.log(this.person);
     }, error =>{
       console.log(error);
     })
