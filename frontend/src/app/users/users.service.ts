@@ -13,7 +13,6 @@ import { Observable } from 'rxjs';
     constructor(private http: HttpClient) { }
 
       register(user):Observable<any>{
-        this.user = user;
         
         return this.http.post('http://localhost:3001/users/register', user)
       }
