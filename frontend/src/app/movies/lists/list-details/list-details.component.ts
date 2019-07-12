@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ListDetailsComponent implements OnInit {
   listDetail: object[];
-  list: object[] = [];
+  list: object;
   actualPage: number = 1
   maxPage: number
   movies: object[];
