@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 
   export class UsersService {
     user: any; // creamos el objeto usuario en el servicio, para que todos los componentes tengan acceso a él, subscribiéndose a los observables qeu salgan de él.
-    baseUrl = environment.backendUrl;
+    baseUrl = environment.backendUrl + ":" +process.env.PORT;
 
     constructor(private http: HttpClient) { }
 
