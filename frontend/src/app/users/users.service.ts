@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   })
 
   export class UsersService {
-    user: object; // creamos el objeto usuario en el servicio, para que todos los componentes tengan acceso a él, subscribiéndose a los observables qeu salgan de él.
+    user: any; // creamos el objeto usuario en el servicio, para que todos los componentes tengan acceso a él, subscribiéndose a los observables qeu salgan de él.
 
     constructor(private http: HttpClient) { }
 
