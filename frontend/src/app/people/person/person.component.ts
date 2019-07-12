@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../people.service';
 import { ActivatedRoute } from '@angular/router';
+import { MoviesService } from '../../movies/movies.service';
 
 @Component({
   selector: 'app-person',
@@ -9,14 +10,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PersonComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private personServices: PeopleService, private peopleService : PeopleService) { }
+  constructor(public moviesServices: MoviesService, public route: ActivatedRoute, public personServices: PeopleService, public peopleService : PeopleService) { }
   person: any[];
-  people: Object[]
+  people: object[];
+  movie: any;
   actualPage: number = 1;
 
   ngOnInit() {
     this.getPerson();
     this.getPeople();
+    this.route.params.subscribe(params => {
+      this.moviesServices.getMovieById(params.id).subscribe(value =>{ 
+      this.movie = value;
+    })
+    })
   }
 
   getPeople(): void {

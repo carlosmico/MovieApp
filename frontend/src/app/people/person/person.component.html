@@ -2,7 +2,7 @@
 <div>
     <div class="person">
         <div class="imageSection">
-            <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{person.profile_path}}" alt={{person.name}}>
+           <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{person.profile_path}}" alt={{person.name}}>
         </div>
         <div class="infoSection">
             <h1>{{person.name}}</h1>
@@ -14,16 +14,31 @@
         <div class="moreInfo">
             <h4>More info</h4>
             <ul>
-                <li><h5>Know for:</h5>{{person.known_for_department}}</li>
-                <li><h5>Birthday:</h5>{{person.birthday}}</li>
-                <li><h5>Place of birth:</h5>{{person.place_of_birth}}</li>
+                <li>
+                    <h5>Know for:</h5>
+                    {{person.known_for_department}}
+                </li>
+                <li>
+                    <h5>Birthday:</h5>
+                    {{person.birthday}}
+                </li>
+                <li>
+                    <h5>Place of birth:</h5>
+                    {{person.place_of_birth}}
+                </li>
+                <li>
+                    <h5>Find out more here:</h5>
+                    <a href="https://www.imdb.com/name/{{person.imdb_id}}" target="_blank"><img class="outButton" src="../../../assets/imdBlogo.png" alt="ImdB logo"></a>
+                    <a href="https://en.wikipedia.org/wiki/{{person.name}}" target="_blank"><img class="outButton" src="../../../assets/wikipediaLogo.png" alt="Wikipedia logo"></a>
+                </li>
             </ul>
         </div>
-        <!-- <div class="knownFor" *ngFor='let person of people'>
+        <!-- <div class="knownFor" id='{{person.known_for}}' *ngFor='let person of people'>
+            {{person.name}}
             <div class="movieKnownFor" *ngFor="let knownFor of person.known_for">
                 <h6>{{knownFor.title}}</h6>
                 <img src="https://image.tmdb.org/t/p/w500/{{knownFor.poster_path}}" alt="{{knownFor.title}}">
             </div>
         </div> -->
-    </div>
+    </div> 
 </div>
