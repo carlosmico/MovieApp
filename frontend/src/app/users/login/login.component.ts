@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {UsersService,} from '../users.service';
+import {UsersService} from '../users.service';
 import {ActivatedRoute} from '@angular/router'
 
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       //this.form.value tiene los datos que hemos metido en el formulario
       this.usersServices.register(this.form.value).subscribe(res => {
         localStorage.setItem('authToken', res.token)
-        this.usersServices.isAuth = true;
+        // this.usersServices.isAuth = true;
         console.log(res)
       },
         error => console.log(error)) //SUBSCRIBE ES DE OBSVERVABLES. MIRAR OBSERVABLES
