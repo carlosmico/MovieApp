@@ -1,0 +1,62 @@
+@import '../../../styles.scss';
+
+.person {
+    display: flex;
+
+    .imageSection {
+        padding: 1em;
+        align-self: center;
+        
+        //img {
+       
+    //   }
+    }
+
+    .infoSection {
+        padding: 1em;
+        text-align: justify;
+        background-color: white;
+        margin-top: 1em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+
+      h1 {
+        margin-top: 0.2em;
+        text-align: center;
+        color: $color-letra-gris;
+      }
+
+      h4 {
+        font-size: 1.2em;
+        text-align: center;
+      }
+
+      .bioSection {
+        margin-top: 1em;
+        text-overflow: ellipsis;
+        margin-bottom: 2em;
+      }
+    }
+}
+
+.MoreInfoSection {
+    display: flex;
+
+    .moreInfo {
+        list-style: none;
+        padding: 1em;
+        background-color: white;
+    }
+
+    .knownFor {
+        padding: 1em;
+        text-align: justify;
+        background-color: white;
+        margin: 1em;
+        img {
+            height: 200px;
+            width: 125px;
+        }
+    }
+
+}
