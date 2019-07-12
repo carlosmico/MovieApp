@@ -38,7 +38,7 @@
 
         <li class="nav-item active logged" [hidden]="!userService.user" [routerLink]="['profile']">
           <img src="../../assets/logoutIcon.png" alt="user">
-          <span>{{userService.user?.username}}</span>
+          <span>{{userService.user?['username']}}</span>
         </li>
 
         <!-- Si el usuario no está loggeado aparecerá esta sección -->
