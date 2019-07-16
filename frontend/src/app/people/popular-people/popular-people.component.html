@@ -16,7 +16,7 @@
 
     <div class="person" *ngFor='let person of people'>
 
-      <div class="imageSection" [routerLink]='["/person",person.id]'>
+      <div class="imageSection" [routerLink]='["/person", person.id]'>
 
         <img src="https://image.tmdb.org/t/p/w235_and_h235_face{{person.profile_path}}" alt={{person.name}}>
 

@@ -2,61 +2,74 @@
 
 .person {
     display: flex;
+    height: 75vh;
 
     .imageSection {
         padding: 1em;
         align-self: center;
         
-        //img {
-       
-    //   }
+        img {
+          border-radius: 0.3em;
+          box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+        }
     }
 
     .infoSection {
         padding: 1em;
         text-align: justify;
-        background-color: white;
+        background-color: $color-letra;
         margin-top: 1em;
         margin-right: 1em;
         margin-bottom: 1em;
+        overflow-y: auto;
+        box-shadow: 0px 0px 10px 0px rgba(173, 173, 173, 1);
 
       h1 {
         margin-top: 0.2em;
         text-align: center;
-        color: $color-letra-gris;
+        color: $color-acento;
       }
 
       h4 {
         font-size: 1.2em;
         text-align: center;
+        color: $color-letra-gris;
       }
 
       .bioSection {
         margin-top: 1em;
-        text-overflow: ellipsis;
         margin-bottom: 2em;
+        text-indent: 2.5em;
       }
     }
 }
 
 .MoreInfoSection {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
 
-    .moreInfo {
-        list-style: none;
-        padding: 1em;
-        background-color: white;
-    }
-
-    .knownFor {
-        padding: 1em;
-        text-align: justify;
-        background-color: white;
+  .moreInfo {
+    margin-left: 1em;
+    padding: 1em;
+    background-color: $color-letra;
+      
+    ul {
+      list-style: none;
+      
+      .moreButton {
         margin: 1em;
-        img {
-            height: 200px;
-            width: 125px;
-        }
+      }
     }
+  }
 
+.movies {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $color-letra;
+  }
+
+  .movie {
+    margin: 0.5em;
+  }
 }

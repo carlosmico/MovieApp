@@ -63,6 +63,7 @@ export class DiscoverMoviesComponent implements OnInit {
 
         this.moviesService.getMoviesByYearAndGenre(this.actualPage, this.filterYear ,genresStr).subscribe(value => {
           this.movies = value.results;
+          console.log(this.movies)
           this.maxPage = value.total_pages;
         }, console.log);
         break;
