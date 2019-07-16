@@ -12,7 +12,7 @@ export class PersonComponent implements OnInit {
 
   constructor(public moviesServices: MoviesService, public route: ActivatedRoute, public personServices: PeopleService, public peopleService : PeopleService) { }
   person: any;
-  credits: any;
+  credits: any[];
 
   ngOnInit() {
     this.getPerson();
