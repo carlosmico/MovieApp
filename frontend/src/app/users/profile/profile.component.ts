@@ -12,7 +12,7 @@ import {ActivatedRoute} from '@angular/router'
 export class ProfileComponent implements OnInit {
   form:FormGroup;
 
-  constructor(private route: ActivatedRoute, private usersServices: UsersService) { }
+  constructor(private route: ActivatedRoute, public usersServices: UsersService) { }
 
   ngOnInit() {
   this.form = new FormGroup({

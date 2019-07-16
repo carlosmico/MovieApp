@@ -12,7 +12,7 @@ export class UpcomingMoviesComponent implements OnInit {
   constructor(private moviesService: MoviesService) { }
   actualPage:number = 1
   maxPage:number
-  private movies: any[];
+  movies: any[];
   
   ngOnInit() {
     this.loadMovies();

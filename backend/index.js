@@ -15,4 +15,4 @@ app.use( express.json() ) // parsea el body de la petición a JSON
 
 app.use('/users',userRouter);
 app.get('/',(req, res) => res.send('hola'))
-app.listen( port, () => console.log( "servidor levantado en "+port ) )
+app.listen( port, () => console.log( "servidor levantado en "+ port ) )
