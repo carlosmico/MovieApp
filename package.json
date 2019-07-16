@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:back": "cd backend && npm start",
     "start:front": "cd frontend && npm start",
+    "dev:front": "cd frontend && npm run dev",
     "start": "concurrently \"npm run start:back\" \"npm run start:front\" ",
+    "dev": "concurrently \"npm run start:back\" \"npm run dev:front\" ",
     "postinstall": "cd backend && npm install &&  cd ../frontend && npm install"
   },
   "private": true,
